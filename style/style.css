@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Arvo&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Spectral&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Galada&display=swap');
 <link rel=”stylesheet” href=”https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css”>
 
 html
@@ -136,17 +137,16 @@ ol li
 { color: #555;
   text-decoration: none;}
 
-.slogan
-{ float: right; 
-  padding-right: 25px;
-  text-align: right; 
-  font: 500% 'tangerine', arial; 
-  color: #111;}
+.quote
+{ float: right;
+  top: 100px;
+  margin-top: -110px;
+}
 
 #menubar
 { height: 46px;
   width: 900px;
-  margin: 0px auto -1px auto;
+  margin: 5px auto -1px auto;
   float: right;
   padding: 0px 0 0 0;
   border-bottom-style: solid;
@@ -268,8 +268,8 @@ iframe {
 #content
 { text-align: left;
   width: 630px;
-  padding: 25px 0 5px 25px;
-  margin: 0;}
+  padding: 35px 0 5px 25px;
+  margin-top: : 30px;}
 
 #content ul
 { margin: 2px 0 22px 0px;}
