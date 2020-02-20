@@ -1,25 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Arvo&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Spectral&display=swap');
+<link rel=”stylesheet” href=”https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css”>
+
 html
 { height: 100%;}
 
 *
 { margin: 0;
   padding: 0;}
+  
 
 body
-{ font: normal .80em 'trebuchet ms', arial, sans-serif;
+{ font: normal .80em 'Spectral', serif;
   background: #EFE2BA fixed;
   color: #555;}
 
 p
-{ padding: 0 0 20px 0;
+{ padding: 0 0 0px 0;
   line-height: 1.5em;
-  font-size: 107%;}
+  font-size: 137%;}
 
 img
 { border: 0;}
 
-h1, h2, h3, h4, h5, h6 
-{ font: normal 250% 'Advent Pro', sans-serif;
+h1,h2, h3, h4, h5, h6 
+{ font: normal 350% 'Advent Pro', sans-serif;
   color: #444;
   margin: 0 0 15px 0;
   padding: 5px 0 5px 0;}
@@ -31,19 +36,19 @@ h2
   padding: 0 0 8px 0;}
 
 h3
-{ font-size: 200%;
+{ font-size: 300%;
   margin: 0 0 9px 0;
   color: #444;}
 
 h4, h5, h6
 { margin: 0;
   padding: 0 0 5px 0;
-  font: normal 100% arial, sans-serif;
+  font: normal 140% arial, sans-serif;
   color: #F14E23;
   line-height: 1em;}
 
 h5, h6
-{ font: italic 95% arial, sans-serif;
+{ font: italic 120% arial, sans-serif;
   color: #888;
   padding-bottom: 15px;}
 
@@ -53,7 +58,7 @@ h6
 a, a:hover
 { outline: none;
   text-decoration: none;
-  color: #35BDF5;}
+  color: #F14E23;}
 
 a:hover
 { text-decoration: underline;}
@@ -77,9 +82,13 @@ ul
 { margin: 2px 0 22px 17px;}
 
 ul li
-{ list-style-type: circle;
+{ list-style-type: square;
   margin: 0 0 0 0; 
-  padding: 0 0 4px 5px;}
+  padding: 0 0 4px 5px;
+}
+
+.list
+{font-size: 150%}
 
 ol
 { margin: 8px 0 22px 20px;}
@@ -91,6 +100,13 @@ ol li
 { margin-left: auto; 
   margin-right: auto;}
 
+#heading
+{
+  font-family: 'Arvo', serif;
+ color:#F13C20;
+ font-size: 400%;
+
+}
 #main
 { width: 950px;
   margin: 20px auto;}
@@ -129,7 +145,7 @@ ol li
 
 #menubar
 { height: 46px;
-  width: 700px;
+  width: 900px;
   margin: 0px auto -1px auto;
   float: right;
   padding: 0px 0 0 0;
@@ -149,7 +165,8 @@ ul#menu li
   background: transparent;}
 
 ul#menu li a
-{ font: 'Sriracha', cursive;
+{ font-family: 'Sriracha', cursive;
+  font-size: 120%;  
   text-decoration: none;
   color: #F13C20;
   display: block; 
@@ -163,13 +180,13 @@ ul#menu li.current a
   padding: 6px 22px 15px 22px;}
 
 ul#menu li.current a
-{ background: #fff;
+{ background: #D79922;
   border: 1px solid #ddd;
   border-bottom: 0;
   color: #F14E23;}
 
 ul#menu li a:hover
-{ color: #F14E23;}
+{ color: #D79922;}
 
 #site_content
 { width: 950px;
@@ -185,8 +202,25 @@ ul#menu li a:hover
     height: 300px;
     width: 300px;
     position: relative;
-
   }
+
+
+.sideimg {
+    padding-top: 20px;
+    float: right;
+    height: 300px;
+    width: 300px;
+    position: relative;
+  }
+
+#dblp {
+    position: absolute;
+    top: 550px;
+    right: 100px;
+    left: 150px;
+  }
+
+
 iframe {
     position: absolute;
     top: 0;
@@ -197,17 +231,24 @@ iframe {
     width: 100%;
 }
 
-#sidebar_container
-{ float: right;
-  width: 250px;
+#location_container
+{ float: left;
+  padding-left: 20px;
+  width: 400px;
   margin: 25px 0;}
 
-.sidebar
+#media_container
 { float: right;
-  width: 200px;
-  margin: 0 24px 27px 0;
-  background: #FBFBFB;
-  border: 1px solid #eee;
+  margin: 0 4px 27px 0;
+
+  width: 400px;
+  margin: 0 25px;}
+
+.sidebar
+{ float: left;
+  width: 400px;
+  margin: 0 4px 27px 0;
+  border: 1px solid #F14E23;
   padding: 0 15px 15px 15px;}
 
 .sidebar h3, .content h1
@@ -217,7 +258,7 @@ iframe {
 .sidebar h1
 { padding: 5px 0 0 0;}
 
-.paperclip
+.location
 { float: left;
   position: relative; 
   z-index: 0;
@@ -346,3 +387,64 @@ table tr td
 { background: #FBFBFB;
   color: #111;
   border-top: 1px solid #FFF;}
+
+
+
+    .icon-list { 
+        position: fixed; 
+        top: 500px; 
+        right:60%; 
+        transform: translateY(-50%); 
+          
+    } 
+      
+    .icon-list a { 
+        display: block; 
+        text-align: center; 
+        padding: 8px; 
+        transition: all 0.5s ease; 
+        color: white; 
+        font-size: 20px; 
+        float:right; 
+    } 
+      
+     /* HOver affect on icons */ 
+    .icon-list a:hover { 
+        color: #000; 
+        width:50px; 
+    } 
+ 
+    /* Desingning each icons */ 
+    .instagram { 
+        background: #3f729b; 
+        color: white; 
+    } 
+      
+    .facebook { 
+        background: #3b5998; 
+        color: white; 
+    } 
+      
+    .twitter { 
+        background: #00acee; 
+        color: white; 
+    } 
+    .linkedin { 
+        background: #0e76a8; 
+        color: white; 
+    } 
+      
+    .google { 
+        background: #db4a39; 
+        color: white; 
+    } 
+      
+    .youtube { 
+        background: #c4302b; 
+        color: white; 
+    }
+
+    .github { 
+        background: #24292e; 
+        color: white; 
+    } 
