@@ -392,8 +392,8 @@ table tr td
 
     .icon-list { 
         position: fixed; 
-        top: 500px; 
-        right:60%; 
+        top: 530px; 
+        right:70%; 
         transform: translateY(-50%); 
           
     } 
@@ -431,11 +431,6 @@ table tr td
     } 
     .linkedin { 
         background: #0e76a8; 
-        color: white; 
-    } 
-      
-    .google { 
-        background: #db4a39; 
         color: white; 
     } 
       
