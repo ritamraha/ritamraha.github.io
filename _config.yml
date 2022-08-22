@@ -42,6 +42,7 @@ nav_pages:
 include:
   - .htaccess
   - _pages
+  - .nojekyll
 
 # Conversion
 markdown: kramdown
