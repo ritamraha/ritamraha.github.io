@@ -87,6 +87,18 @@ pre{
 <button class="btn btn-warning btm-sm"  onclick="toggleAbstract{{entry.key}}()">ABSTRACT</button>
 {% endif %}
 
+{% if entry.website %}
+<a href="{{ entry.website}}" target="_blank"><button class="btn btn-success btm-sm">website</button></a>
+{% endif %}
+
+{% if entry.package %}
+<a href="{{ entry.package}}" target="_blank"><button class="btn btn-primary btm-sm">package</button></a>
+{% endif %}
+
+{% if entry.github %}
+<a href="{{ entry.github}}" target="_blank"><button class="btn btn-warning btm-sm">github</button></a>
+{% endif %}
+
 {% if entry.abstract %}
 <div id="a{{entry.key}}" style="display: none; background-color:black; border-radius:5px; padding:10px; margin-bottom:20px;">
 <pre>{{ entry.bibtex | remove: "entry.abstract" }}</pre>

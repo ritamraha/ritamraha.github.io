@@ -38,7 +38,7 @@ permalink: /publications/
 </div>
 
 <div class="jumbotron">
-### Thesis
+### Masters Thesis
 {% bibliography --query @thesis%}
 </div>
 

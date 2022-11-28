@@ -136,7 +136,7 @@ Similar outcomes are desirable for sensitive, implanted biomedical devices.
 
 <p>I have done my Master's thesis on <span style= "color:#F14E23"><b><i>Relaxed Energy Games</i></b></span> at <a href="https://www.irisa.fr/sumo/">SUMO team </a>, INRIA, Rennes under supervision of <a href="https://people.irisa.fr/Nicolas.Markey/">Nicolas Markey</a> and <a href="https://people.irisa.fr/Loic.Helouet/">Lo&iuml;c H&eacute;lou&euml;t</a>. My thesis led to <a href="https://dblp.org/rec/journals/corr/abs-1909-07653">this paper</a>.</p>
         
-  <p> You can check my <b>thesis presentation</b> by clicking <a href="thesis/index.html" target="_blank">here</a> with the <b>thesis report</b> <a href="thesis/raha_thesis.pdf" target="_blank">here</a> .</p>
+  <p> You can check my <b>thesis presentation</b> by clicking <a href="thesis/index.html" target="_blank">here</a> with the <b>thesis report</b> <a href="../papers/master_thesis.pdf" target="_blank">here</a> .</p>
   
   <i>Abstract:</i>
   <p> Energy reachability games are finite two player turn-based games played on weighted graphs. The objective of the game combines reachability objective(qualitative) with the (quantitative) requirement that the weights along a path must satisfy certain constraints (bounds). Besides having direct applications in reactive system synthesis with resource constraints, it is one of thesimplest models that combine quantitative and qualitative objectives.</p>
