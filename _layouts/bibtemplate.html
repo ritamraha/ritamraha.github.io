@@ -35,9 +35,41 @@ pre{
 {% endfor %}
 {% endif %}
 
+
 {% if bibtest %}
 <a href="{{ site.url }}{{ site.baseurl }}/papers/{{ entry.file }}" target="_blank"><button class="btn btn-success btm-sm">PDF</button></a>
 {% endif %}
+
+{% assign bibvideo = false %}
+{% if entry.video %}
+{% assign bibvideo = "/talks/" | append: entry.video %}
+{% for video in site.static_files %}
+  {% if video.path contains bibvideo %}
+   {% assign bibvideo = true %}
+  {% endif %}
+{% endfor %}
+{% endif %}
+
+
+{% if bibvideo %}
+<a href="{{ site.url }}{{ site.baseurl }}/talks/{{ entry.video }}" target="_blank"><button class="btn btn-success btm-sm">Video</button></a>
+{% endif %}
+
+{% assign bibslides = false %}
+{% if entry.slides %}
+{% assign bibslides = "/slides/" | append: entry.slides %}
+{% for slides in site.static_files %}
+  {% if slides.path contains bibslides %}
+   {% assign bibslides = true %}
+  {% endif %}
+{% endfor %}
+{% endif %}
+
+
+{% if bibslides %}
+<a href="{{ site.url }}{{ site.baseurl }}/slides/{{ entry.slides }}" target="_blank"><button class="btn btn-success btm-sm">Slides</button></a>
+{% endif %}
+
 
 {% if entry.doi %}
 {% if entry.type == 'unpublished' %}
@@ -68,6 +100,7 @@ pre{
 <div id="b{{entry.key}}" style="display: none; background-color:black; border-radius:5px; padding:10px; margin-bottom:20px;">
 <pre>{{entry.abstract}}</pre>
 </div>
+
 
 <script>
 function toggleBibtex{{entry.key}}(parameter) {
