@@ -6,4 +6,4 @@ sitemap: false
 permalink: /aboutwebsite.html
 ---
 
-Feel free to use this template for your academic website. Please visit <a href="https://github.com/sbryngelson/academic-website-template" target="_blank">this link</a> for detailed instructions.
+This template is borrowed and customized from <a href="https://github.com/sbryngelson/academic-website-template" target="_blank">here</a>.

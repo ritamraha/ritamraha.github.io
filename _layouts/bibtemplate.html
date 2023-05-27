@@ -23,7 +23,7 @@ pre{
 
 
 <div class="text-justify">
-{{reference | replace_first: 'Bryngelson, S. H.', '<b>Bryngelson, S. H.</b>' | replace_first: 'Bryngelson, S.', '<b>Bryngelson, S.</b>' | replace_first: 'Bryngelson SH', '<b>Bryngelson SH</b>' | replace_first: 'Bryngelson S', '<b>Bryngelson S</b>'}}</div>
+{{reference}}</div>
 
 {% assign bibtest = false %}
 {% if entry.file %}
@@ -67,7 +67,7 @@ pre{
 
 
 {% if bibslides %}
-<a href="{{ site.url }}{{ site.baseurl }}/slides/{{ entry.slides }}" target="_blank"><button class="btn btn-success btm-sm">Slides</button></a>
+<a href="{{ site.url }}{{ site.baseurl }}/slides/{{ entry.slides }}" target="_blank"><button class="btn btn-primary btm-sm">Slides</button></a>
 {% endif %}
 
 

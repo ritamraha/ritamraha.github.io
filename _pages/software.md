@@ -1,4 +1,4 @@
----
+<!---
 title: "Software"
 layout: gridlay
 sitemap: false
@@ -12,11 +12,11 @@ img{
 iframe {
   width: 175px;
   display: inline;
-  vertical-align:middle;
+  vertical-align:middle;--->
   <!-- margin-bottom:5px; -->
   <!-- margin-left:5px; -->
   <!-- border: 1px solid red; -->
-}
+<!---}
 .col-md-3 {
   margin:0;
   padding:0;
@@ -29,12 +29,12 @@ iframe {
   height: auto;
   float: none;
   background:white;
-  border-radius:20px;
+  border-radius:20px;--->
   <!-- border: 1px solid black; -->
 }
-</style>
+<!---</style>--->
 
-## Software
+<!---## Software
 
 <div class="jumbotron">
 <div class="row align-items-end">
@@ -185,3 +185,4 @@ Parallel communication (MPI) enables large simulations, such as model vascular n
 </div>
 </div>
 </div>
+--->

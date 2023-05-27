@@ -11,38 +11,37 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap");
 :root {
-  --blue: #375a7f;
+  --blue: #b58900;
   --indigo: #6610f2;
   --purple: #6f42c1;
   --pink: #e83e8c;
-  --red: #e74c3c;
+  --red: #d33682;
   --orange: #fd7e14;
-  --yellow: #f39c12;
-  --green: #00bc8c;
+  --yellow: #cb4b16;
+  --green: #2aa198;
   --teal: #20c997;
-  --cyan: #3498db;
+  --cyan: #268bd2;
   --white: #fff;
-  --gray: #888;
-  --gray-dark: #303030;
-  --primary: #375a7f;
-  --secondary: #444;
-  --success: #00bc8c;
-  --info: #3498db;
-  --warning: #f39c12;
-  --danger: #e74c3c;
-  --light: #adb5bd;
-  --dark: #303030;
+  --gray: #839496;
+  --gray-dark: #141617;
+  --primary: #b58900;
+  --secondary: #b1ada9;
+  --success: #2aa198;
+  --info: #268bd2;
+  --warning: #cb4b16;
+  --danger: #d33682;
+  --light: #fdf6e3;
+  --dark: #141617;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-sans-serif: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
-
 *,
 *::before,
 *::after {
@@ -64,7 +63,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 body {
   margin: 0;
   font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 0.9375rem;
+  font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.5;
   color: #fff;
@@ -554,7 +553,7 @@ pre code {
 .container-sm,
 .container-md,
 .container-lg,
-.container-xl {
+.container-xl{
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
@@ -563,7 +562,7 @@ pre code {
 }
 
 @media (min-width: 576px) {
-  .container, .container-sm {
+  .container,.container-sm{
     max-width: 540px;
   }
 }
@@ -591,7 +590,7 @@ pre code {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
 }
@@ -1239,6 +1238,11 @@ pre code {
             flex: 0 0 75%;
     max-width: 75%;
   }
+  @media (max-width: 768px) {
+  .col-md-9 {
+    width: 100% !important;
+  }
+}
   .col-md-10 {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 83.3333333333%;
@@ -4507,7 +4511,7 @@ input[type="button"].btn-block {
 
 .nav-link {
   display: block;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 0.5rem;
 }
 
 .nav-link:hover, .nav-link:focus {
@@ -4522,13 +4526,11 @@ input[type="button"].btn-block {
 
 .nav-tabs {
   border-bottom: 1px solid #444;
-}
 
-.nav-tabs .nav-item {
-  margin-bottom: -1px;
 }
 
 .nav-tabs .nav-link {
+  margin-bottom: -1px;
   border: 1px solid transparent;
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
@@ -4606,7 +4608,7 @@ input[type="button"].btn-block {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 1rem 1rem;
+  padding: 0.5rem 0.3rem;
 }
 
 .navbar .container,
@@ -4625,20 +4627,18 @@ input[type="button"].btn-block {
 }
 
 .navbar-brand {
-  display: inline-block;
-  padding-top: 0.32421875rem;
-  padding-bottom: 0.32421875rem;
-  margin-right: 1rem;
   font-size: 1.171875rem;
   line-height: inherit;
   white-space: nowrap;
-}
+  margin-left:-10px;
 
+}
 .navbar-brand:hover, .navbar-brand:focus {
   text-decoration: none;
 }
 
 .navbar-nav {
+  font-size: .9rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4649,6 +4649,7 @@ input[type="button"].btn-block {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  margin-right:-10px;
 }
 
 .navbar-nav .nav-link {
@@ -4668,6 +4669,7 @@ input[type="button"].btn-block {
 }
 
 .navbar-collapse {
+  justify-content: center;
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
   -webkit-box-flex: 1;
@@ -4676,6 +4678,7 @@ input[type="button"].btn-block {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+
 }
 
 .navbar-toggler {
