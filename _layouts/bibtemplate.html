@@ -23,7 +23,16 @@ pre{
 
 
 <div class="text-justify">
-{{reference}}</div>
+  {% if entry.title %}
+    <strong>{{ entry.title }}</strong><br/>
+    {% assign reference_without_title = reference | replace: entry.title, "" %}
+    {% assign reference_without_title = reference_without_title | replace: ".\n", "\n" %}
+    {{ reference_without_title | remove_first: '.' }}
+  {% else %}
+    {{ reference }}
+  {% endif %}
+</div>
+
 
 {% assign bibtest = false %}
 {% if entry.file %}

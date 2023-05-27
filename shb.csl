@@ -328,7 +328,7 @@
   <!-- APA references contain four parts: author, date, title, source -->
   <macro name="author-bib">
     <names variable="composer">
-      <name name-as-sort-order="all" and="symbol" sort-separator=", " initialize-with=". " delimiter-precedes-last="always"/>
+      <name and="symbol" sort-separator=", " initialize-with=". " delimiter-precedes-last="always"/>
        <substitute>
         <names variable="author"/>
         <names variable="illustrator"/>
