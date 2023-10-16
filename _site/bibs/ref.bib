@@ -18,7 +18,7 @@
   file = {relax_conf.pdf},
 }
 
-@inproceedings{RRFN,
+@inproceedings{RRFN2022,
 author="Ritam Raha
 and Rajarshi Roy
 and Nathana{\"e}l Fijalkow
@@ -54,7 +54,7 @@ doi= "https://doi.org/10.1007/978-3-030-99524-9_14",
   file= {poca.pdf},
 }
 
-@article{HELOUET2022104806,
+@article{HELOUET2022,
 title = {Reachability games with relaxed energy constraints},
 journal = {Information and Computation},
 year = {2022},
@@ -66,7 +66,64 @@ author = {Loïc Hélouët and Nicolas Markey and Ritam Raha},
 keywords = {Games, Energy},
 }
 
-@software{ritam_raha_2022_5890149,
+@inproceedings{RahaMTL24,
+title = "Synthesizing Efficiently Monitorable Formulas in Metric Temporal Logic",
+year = {2024},
+author = {Ritam Raha
+and Rajarshi Roy
+and Nathana{\"e}l Fijalkow
+and Daniel Neider
+and Guillermo Per{\'e}z},
+note= {(To appear)},
+booktitle= {25th International Conference on Verification, Model Checking, and Abstract Interpretation (VMCAI 2024)},
+file = {MTL.pdf}
+}
+
+@inproceedings{Cadilhac23,
+author       = {Micha{\"{e}}l Cadilhac and
+                  Arka Ghosh and
+                  Guillermo A. P{\'{e}}rez and
+                  Ritam Raha},
+  editor       = {J{\'{e}}r{\^{o}}me Leroux and
+                  Sylvain Lombardy and
+                  David Peleg},
+  title        = {Parikh One-Counter Automata},
+  booktitle    = {48th International Symposium on Mathematical Foundations of Computer
+                  Science, {MFCS} 2023, August 28 to September 1, 2023, Bordeaux, France},
+  series       = {LIPIcs},
+  volume       = {272},
+  pages        = {30:1--30:15},
+  publisher    = {Schloss Dagstuhl - Leibniz-Zentrum f{\"{u}}r Informatik},
+  year         = {2023},
+  url          = {https://doi.org/10.4230/LIPIcs.MFCS.2023.30},
+  doi          = {10.4230/LIPIcs.MFCS.2023.30},
+  file         = {ParOCA.pdf}
+}
+
+@inproceedings{Bellis2023,
+author       = {Stijn Bellis and
+                  Joachim Denil and
+                  Ramesh Krishnamurthy and
+                  Tim Leys and
+                  Guillermo A. P{\'{e}}rez and
+                  Ritam Raha},
+  editor       = {Olivier Bournez and
+                  Enrico Formenti and
+                  Igor Potapov},
+  title        = {A Framework for the Competitive Analysis of Model Predictive Controllers},
+  booktitle    = {Reachability Problems - 17th International Conference, {RP} 2023,
+                  Nice, France, October 11-13, 2023, Proceedings},
+  series       = {Lecture Notes in Computer Science},
+  volume       = {14235},
+  pages        = {141--154},
+  publisher    = {Springer},
+  year         = {2023},
+  url          = {https://doi.org/10.1007/978-3-031-45286-4\_11},
+  doi          = {10.1007/978-3-031-45286-4\_11},
+  file         = {MPC.pdf}
+  }
+
+@software{SCARLET,
   author       = {Ritam Raha and
                   Rajarshi Roy and
                   Nathanaël Fijalkow and
@@ -81,6 +138,17 @@ keywords = {Games, Energy},
   github       = {https://github.com/rajarshi008/Scarlet},
   website      = {https://scarlet.labri.fr/},
   package      = {https://pypi.org/project/Scarlet-ltl/0.0.1/},
+}
+
+@software{TEAL,
+  author       = {Ritam Raha and
+                  Rajarshi Roy and
+                  Nathanaël Fijalkow and
+                  Daniel Neider and
+                  Guillermo Perez},
+  title        = {{TEAL: Synthesizing Efficiently Monitorable MTL 
+                   }},
+  github       = {https://github.com/ritamraha/Teal},
 }
 
 @incollection{invited_mpi,
@@ -103,58 +171,22 @@ keywords = {Games, Energy},
   keywords = "regular",
 }
 
-@thesis{Masters,
+@mastersthesis{Masters,
 title = {Reachability Games with Strong and Relaxed Energy Constrainsts},
 year = {2019},
 author = {Ritam Raha},
 file = {master_thesis.pdf},
+slides= {../thesis/index.html}
 }
 
-@insubmissions{MTL,
-title = "Synthesizing Efficiently Monitorable Formulas in Metric Temporal Logic",
-year = {2023},
-author = {Ritam Raha
-and Rajarshi Roy
-and Nathana{\"e}l Fijalkow
-and Daniel Neider
-and Guillermo Per{\'e}z}
-}
-
-@inproceedings{POCA,
-title = "Parikh One-Counter Automata",
-year = {2023},
-author = {Micha{\"e}l Cadilhac
-and Arka Ghosh
-and Guillermo Per{\'e}z
-and Ritam Raha},
-note= {(To appear)},
-booktitle= {48th International Symposium on Mathematical Foundations of Computer Science (MFCS 2023)}
-}
-
-@inproceedings{MPC,
-title = "A Framework for the Competitive Analysis of Model Predictive Controllers",
-year = {2023},
-author = {Stijn Bellis
-and Joachim Denil
-and Ramesh Krishnamurthy
-and Tim Leys
-and Guillermo Per{\'e}z
-and Ritam Raha
-},
-note= {(To appear)},
-booktitle= {17th International Conference on Reachability Problems (RP 2023)}
-}
-
-@software{ritam_raha_2023,
-  author       = {Ritam Raha and
-                  Rajarshi Roy and
-                  Nathanaël Fijalkow and
-                  Daniel Neider and
-                  Guillermo Perez},
-  title        = {{TEAL: Synthesizing Efficiently Monitorable MTL 
-                   }},
-  github       = {https://github.com/ritamraha/Teal},
-  note         = {Under Construction}
-}
- 
+@phdthesis{Phd,
+author       = {Ritam Raha},
+title        = {Learning and Verifying Temporal Specifications for Cyber-physical
+                  Systems},
+school       = {University of Antwerp, Belgium & University of Bordeuax, France},
+year         = {2023},
+url          = {https://hdl.handle.net/10067/1986580151162165141},
+file         = {raha_phd_thesis.pdf},
+defenceslides= {https://1drv.ms/p/s!Ak7rtTf4AMy06m7f0lN_2syIEc3B}
+} 
 }

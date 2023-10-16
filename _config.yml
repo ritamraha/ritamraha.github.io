@@ -1,6 +1,6 @@
 # Site settings
 title: Ritam Raha
-email: ritam.raha@uantwerpen.be
+email: ritam.raha18@gmail.com
 description: Ritam Raha's Homepage
 baseurl: ""
 url: ""
@@ -14,30 +14,26 @@ url: ""
 # Footer info
 affiliation: >
     Ritam Raha<br/>
-    Doctoral Student in Computer Science<br/>
-    <a href="https://www.uantwerpen.be/en/" target="_blank">University of Antwerp</a><br/>
-    <a href="https://www.u-bordeaux.fr/" target="_blank">University of Bordeaux</a><br/>
-
+    (incoming) Postdoctoral Researcher in Computer Science<br/>
+    <a href="https://www.mpi-sws.org/" target="_blank">Max Planck Institute for Software Systems, Kaiserslautern, Germany</a><br/>
+   
 location: >
-  <a href="https://www.openstreetmap.org/?mlat=51.184253&;mlon=4.420946#map=18/51.18445/4.42103" target="_blank">Campus Middelheim</a><br/>
-  University of Antwerp<br/>
-  Middelheimlaan 1 <br/>
-  M.G. 317<br/>
-  2020 Antwerpen, België
-
+  (temporary)
+  57B, Mandal Street<br/>
+  Kolkata- 700006<br/>
+  West Bengal, India
 
 
 contact: >
-    <a href="mailto:ritam.raha@uantwerpen.be" target="_blank"><i class="fa fa-envelope fa-1x"></i> Contact Ritam via email</a> <br/>
+    <a href="mailto:ritam.raha18@gmail.com" target="_blank"><i class="fa fa-envelope fa-1x"></i> Contact Ritam via email</a> <br/>
     <a href="/aboutwebsite.html"><i class="fa fa-github fa-1x"></i> Use this site as a template!</a>
 
 # Pages shown in navbar
 nav_pages:
   - name: about
-  - name: research
   - name: publications
   - name: talks
-  - name: teaching
+  - name: service
   - name: miscellaneous
 
 include:

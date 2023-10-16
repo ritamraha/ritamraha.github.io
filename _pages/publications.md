@@ -19,13 +19,12 @@ permalink: /publications/
 ### Preprints
 {% bibliography --query @unpublished %}
 </div>
- -->
 
 <div class="jumbotron">
 ### Under submission
 {% bibliography --query @insubmissions %}
 </div>
-
+-->
 
 <div class="jumbotron">
 ### Conference proceedings
@@ -45,7 +44,12 @@ permalink: /publications/
 </div>
 
 <div class="jumbotron">
+### PhD Thesis
+{% bibliography --query @phdthesis%}
+</div>
+
+<div class="jumbotron">
 ### Masters Thesis
-{% bibliography --query @thesis%}
+{% bibliography --query @mastersthesis%}
 </div>
 

@@ -80,6 +80,16 @@ pre{
 {% endif %}
 
 
+{% assign bibdefenceslides = false %}
+{% if entry.defenceslides %}
+{% assign bibdefenceslides = true %}
+{% endif %}
+
+{% if bibdefenceslides %}
+<a href="{{ entry.defenceslides }}" target="_blank"><button class="btn btn-primary btm-sm">Defence Slides</button></a>
+{% endif %}
+
+
 {% if entry.doi %}
 {% if entry.type == 'unpublished' %}
 <a href="{{ entry.doi | prepend: 'https://arxiv.org/abs/' }}" target="_blank"><button class="btn btn-primary btm-sm">ARXIV</button></a>
