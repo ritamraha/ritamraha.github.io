@@ -1,0 +1,22 @@
+\documentclass{standalone}
+
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{gastex}
+\usetikzlibrary{automata}
+\usetikzlibrary {positioning}
+%\pgfplotsset{compat=1.16}
+\usepackage{raha_tikz}
+
+
+\begin{document}
+  \begin{tikzpicture}[scale=1.3]
+    \begin{scope}
+    \draw (-.1,2.1) node {$G_{APNA}$};
+    \draw[rounded corners=5mm,grisc] (-.6,.2) -- (1.2,2.4) -- (4.4,1.2) -- (4,-2) -- (2,-2.6) -- (.2,-2.2) -- cycle;
+      \draw (1,.5) node[rectangle,rouge](a) {$(q,E_n,(n,c,s))$};
+      \draw (2,-1.2) node[rectangle,jaune](b) {$(q',{E_n}',(n',c',s'))$};
+      \draw (a) edge[-latex'] (b);
+    \end{scope}
+\end{tikzpicture}
+\end{document}

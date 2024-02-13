@@ -1,0 +1,29 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usetikzlibrary{automata}
+\usetikzlibrary {positioning}
+%\pgfplotsset{compat=1.16}
+\usepackage{raha_tikz}
+
+
+\begin{document}
+  \begin{tikzpicture}[scale=1.1]
+    \begin{scope}
+    \draw (0,.8) node {$G$};
+    \draw (-.5,.4) node[opacity=0](i){};
+    \draw (.5,.4) node[opacity=0](j){};
+    \draw (0,0) node[diamond,jaune] (a) {} node {$q_2$};
+    \draw (i) edge[-latex',dashed] (a);
+    \draw (j) edge[-latex',dashed] (a);
+    \draw (2,-2) node[rond5,jaune] (c) {} node {$q_r$};
+    \draw (-2,-2) node[rond5,jaune] (b) {} node {$q_l$};
+    \draw (2,-3) node[opacity=0] (cc) {} node {};
+    \draw (-2,-3) node[opacity=0] (bb) {} node {};
+    \draw (b) edge[-latex',dashed] (bb);
+    \draw (c) edge[-latex',dashed] (cc);
+    \draw (a) edge[-latex'] node[left] {$-1$} (b);
+    \draw (a) edge[-latex'] node[right] {$2$} (c);
+    \end{scope}
+\end{tikzpicture}
+\end{document}
