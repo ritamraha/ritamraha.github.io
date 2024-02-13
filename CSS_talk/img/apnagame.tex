@@ -1,0 +1,33 @@
+\documentclass{standalone}
+
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{gastex}
+
+\newcommand{\smaller}{\mathrm{S}}
+\newcommand{\bigger}{\mathrm{B}}
+\newcommand{\start}{\mathrm{start}}
+\newcommand{\ed}{\mathrm{end}}
+
+\begin{document}
+
+\begin{picture}(100,50)(-15,10)
+  	\node[Nmarks=i](0)(0,30){$q_0$}
+    \node(1)(25,30){$q_1$}
+  	\node(2)(50,30){$q_2$}
+  	\node(3)(75,30){$T$}
+  	\node[Nframe=n,Nadjust=w,Nh=6,Nmr=0](A)(0,48){$L=0,RU=5$}
+    \node[Nadjust=w,Nadjustdist=2,Nh=6,Nmr=1](O1)(35,45){Overload=$3$}
+    \node[Nadjust=w,Nadjustdist=2,Nh=6,Nmr=1](O2)(60,45){Overload=$4$}
+    \node[Nadjust=w,Nadjustdist=2,Nh=6,Nmr=1,Nmarks=r](V)(60,15){Violations=$V(\rho)=2$}
+
+  	\drawedge(0,1){$5$}
+    \drawedge(1,2){$3$}
+    \drawedge(2,3){$1$}
+    \drawedge(O1,2){$$}
+    \drawedge(O2,3){$$}
+    \drawedge(2,V){$$}
+    \drawedge(3,V){$$}
+  	%\drawedge[ELside=r](11,2){$+1$}
+\end{picture}
+
+\end{document}
