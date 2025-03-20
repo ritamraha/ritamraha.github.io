@@ -1,0 +1,21 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usetikzlibrary{automata}
+\usetikzlibrary {positioning}
+%\pgfplotsset{compat=1.16}
+\usepackage{raha_tikz}
+
+
+\begin{document}
+  \begin{tikzpicture}[scale=1.1]
+    \begin{scope}
+    \draw (-1,0) node[opacity=0](i){};
+    \draw (0,0) node[rond5,jaune] (a) {} node {$$};
+    \draw (i) edge[-latex',dashed] node[above]{$x$} (a);
+    \draw (2,0) node[rond5,jaune] (b) {} node {$$};
+    \draw (a) edge[-latex',bend left] node[above] {$2$} (b);
+    \draw (b) edge[-latex',bend left] node[below] {$-1$} (a);
+    \end{scope}
+\end{tikzpicture}
+\end{document}
