@@ -195,115 +195,6 @@ function toggleAbstractshield(parameter) {
     }
 }
 </script>
-</li>
-<li><style>
-.btn{
-    margin-bottom:5px;
-    padding-top:0px;
-    padding-bottom:0px;
-    padding-left:15px;
-    padding-right:15px;
-    height:20px:
-}
-pre{
-    white-space: pre-wrap;  
-    white-space: -moz-pre-wrap; 
-    white-space: -pre-wrap; 
-    white-space: -o-pre-wrap; 
-    word-wrap: break-word; 
-    width:100%; overflow-x:auto;
-}
-</style>
-
-
-<div class="text-justify">
-  
-    <strong>Quantitative Strategy Templates</strong><br/>
-    
-    
-    <span id="qastel"> A. Anand, S. P. Nayak, I. Sağlam, R. Raha, &amp; A.-K. Schmuck. (2025). In <i>preprint: Vol. abs/2504.16528</i>.</span>
-  
-</div>
-
-
-
-
-
-
-
-<a href="/papers/qastel.pdf" target="_blank"><button class="btn btn-success btm-sm">PDF</button></a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<button class="btn btn-danger btm-sm"  onclick="toggleBibtexqastel()">BIB</button>
-
-
-
-
-
-
-
-
-
-
-
-<div id="aqastel" style="display: none; background-color:black; border-radius:5px; padding:10px; margin-bottom:20px;">
-<pre>@unpublished{qastel,
-  author = {Anand, Ashwani and Nayak, Satya Prakash and Sa{\u{g}}lam, Irmak and Raha, Ritam and Schmuck, Anne{-}Kathrin},
-  title = {Quantitative Strategy Templates},
-  booktitle = {preprint},
-  volume = {abs/2504.16528},
-  year = {2025},
-  file = {qastel.pdf}
-}
-</pre>
-</div>
-
-
-<div id="bqastel" style="display: none; background-color:black; border-radius:5px; padding:10px; margin-bottom:20px;">
-<pre></pre>
-</div>
-
-
-<script>
-function toggleBibtexqastel(parameter) {
-    var x= document.getElementById('aqastel');
-    if (x.style.display === 'none') {
-        x.style.display = 'block';
-    } else {
-        x.style.display = 'none';
-    }
-}
-function toggleAbstractqastel(parameter) {
-    var x= document.getElementById('bqastel');
-    if (x.style.display === 'none') {
-        x.style.display = 'block';
-    } else {
-        x.style.display = 'none';
-    }
-}
-</script>
 </li></ol>
 </div>
 
@@ -421,8 +312,12 @@ function toggleAbstractshield(parameter) {
     }
 }
 </script>
-</li>
-<li><style>
+</li></ol>
+</div>
+
+<div class="jumbotron">
+  <h3 id="conference-proceedings">Conference proceedings</h3>
+  <ol class="bibliography" reversed="reversed"><li><style>
 .btn{
     margin-bottom:5px;
     padding-top:0px;
@@ -447,7 +342,7 @@ pre{
     <strong>Quantitative Strategy Templates</strong><br />
     
     
-    <span id="qastel"> A. Anand, S. P. Nayak, I. Sağlam, R. Raha, &amp; A.-K. Schmuck. (2025). In <i>preprint: Vol. abs/2504.16528</i>.</span>
+    <span id="qastel"> A. Anand, S. P. Nayak, I. Sağlam, R. Raha, &amp; A.-K. Schmuck. (2025). <i>To Appear in ATVA 2025</i>, <i>abs/2504.16528</i>.</span>
   
 </div>
 
@@ -495,10 +390,10 @@ pre{
 
 
 <div id="aqastel" style="display: none; background-color:black; border-radius:5px; padding:10px; margin-bottom:20px;">
-<pre>@unpublished{qastel,
+<pre>@inproceedings{qastel,
   author = {Anand, Ashwani and Nayak, Satya Prakash and Sa{\u{g}}lam, Irmak and Raha, Ritam and Schmuck, Anne{-}Kathrin},
   title = {Quantitative Strategy Templates},
-  booktitle = {preprint},
+  booktitle = {To appear in ATVA 2025},
   volume = {abs/2504.16528},
   year = {2025},
   file = {qastel.pdf}
@@ -530,12 +425,8 @@ function toggleAbstractqastel(parameter) {
     }
 }
 </script>
-</li></ol>
-</div>
-
-<div class="jumbotron">
-  <h3 id="conference-proceedings">Conference proceedings</h3>
-  <ol class="bibliography" reversed="reversed"><li><style>
+</li>
+<li><style>
 .btn{
     margin-bottom:5px;
     padding-top:0px;
@@ -560,7 +451,7 @@ pre{
     <strong>Fair Quantitative Games</strong><br />
     
     
-    <span id="Anand2025"> A. Anand, S. P. Nayak, R. Raha, I. Saglam, &amp; A.-K. Schmuck. (2025). <i>To Appear in FOSSACS 2025</i>, <i>abs/2501.17255</i>.</span>
+    <span id="Anand2025"> A. Anand, S. P. Nayak, R. Raha, I. Saglam, &amp; A.-K. Schmuck. (2025). <i>FoSSaCS</i>, <i>15691</i>, 331–354.</span>
   
 </div>
 
@@ -611,8 +502,11 @@ pre{
 <pre>@inproceedings{Anand2025,
   author = {Anand, Ashwani and Nayak, Satya Prakash and Raha, Ritam and Saglam, Irmak and Schmuck, Anne{-}Kathrin},
   title = {Fair Quantitative Games},
-  booktitle = {To appear in FOSSACS 2025},
-  volume = {abs/2501.17255},
+  booktitle = {FoSSaCS},
+  series = {Lecture Notes in Computer Science},
+  volume = {15691},
+  pages = {331--354},
+  publisher = {Springer},
   year = {2025},
   file = {fossacs2025.pdf}
 }
