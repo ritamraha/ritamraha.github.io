@@ -1,78 +1,8 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-}
+/* Minimal page-level normalization: rely on Bootstrap / site-wide styles for resets. */
+html, body { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
 
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-    display: block;
-}
-body {
-    line-height: 1;
-}
-ol, ul {
-    list-style: none;
-}
-ol {
-  margin: 0;
-}
-ul {
-  margin: 0;
-}
-ul.dashed {
-  list-style-type: none;
-}
-ul.dashed > li {
-  text-indent: -5px;
-}
-ul.dashed > li:before {
-  content: "-";
-  text-indent: -5px;
-}
-
-blockquote, q {
-    quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: '';
-    content: none;
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-body {
-    font-family: 'PT Sans', sans-serif;
-    min-height: 740px;
-}
-
-h1,h2,h3,h4,h5 {
-    text-align: center;
-}
-
-b, strong { font-weight: bold }
-i, em { font-style: italic }
-
+/* Small helpers retained for thesis pages */
 a {
     color: inherit;
     text-decoration: none;
@@ -80,16 +10,10 @@ a {
     background: rgba(255,255,255,0.5);
     text-shadow: -1px -1px 2px rgba(100,100,100,0.9);
     border-radius: 0.2em;
-
-    -webkit-transition: 0.5s;
-    -moz-transition:    0.5s;
-    -ms-transition:     0.5s;
-    -o-transition:      0.5s;
-    transition:         0.5s;
+    transition: 0.5s;
 }
 
-a:hover,
-a:focus {
+a:hover, a:focus {
     background: rgba(255,255,255,1);
     text-shadow: -1px -1px 2px rgba(100,100,100,0.5);
 }
@@ -117,22 +41,14 @@ a:focus {
     transition:         opacity .1s;
 }
 
-h1 {
-    font-size: 200px;
-}
 
-h2 {
-    font-size: 100px;
-    line-height: 1.1;
-}
+h1 { font-size: 200px; }
 
-h3 {
-    font-size: 40px;
-}
+h2 { font-size: 100px; line-height: 1.1; }
 
-h4 {
-    font-size: 30px;
-}
+h3 { font-size: 40px; }
+
+h4 { font-size: 30px; }
 
 img {
     width: 100%;
@@ -143,14 +59,9 @@ img.resize {
   max-height:45%;
 }
 
-ul {
-    display: block;
-    list-style-type: disc;
-}
 
-table {
-    width: 100%;
-}
+ul { display: block; list-style-type: disc; }
+table { width: 100%; }
 
 .slides {
     padding: 0;
@@ -240,22 +151,9 @@ table {
 .flides-on-overview .slide_step {
     opacity: 1;
 }
-* {
-			  box-sizing: border-box;
-			}
+.column { padding: 20px; }
 
-			.column {
-			  padding: 20px;
-			}
+/* Clearfix (clear floats) */
+.row::after { content: ""; clear: both; display: table; }
 
-			/* Clearfix (clear floats) */
-			.row::after {
-			  content: "";
-			  clear: both;
-			  display: table;
-			}
-
-
-.boxed {
-  border: 2px solid blue ;
-}
+.boxed { border: 2px solid blue; }
