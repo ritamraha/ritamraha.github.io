@@ -1,0 +1,21 @@
+\documentclass{standalone}
+
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{gastex}
+
+\begin{document}
+
+\begin{picture}(52,26)(-10,0)
+
+  	\node[Nmarks=i](0)(0,7){$q_0$}
+  	\node(1)(15,7){$q_1$}
+  	\node(2)(15,22){$q_2$}
+  	\node[Nmarks=f,fangle=0](3)(30,7){$T$}
+
+  	\drawedge(0,1){$2$}
+  	\drawedge(1,3){$3$}
+  	\drawedge[curvedepth=3](1,2){$4$}
+  	\drawedge[curvedepth=3](2,1){$-3$}
+\end{picture}
+
+\end{document}

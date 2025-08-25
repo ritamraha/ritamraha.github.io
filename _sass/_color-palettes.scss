@@ -1,0 +1,93 @@
+/* ===== COLOR PALETTES ===== */
+
+    /* ACTIVE PALETTE: Pastel Dream */
+
+    body:not([data-theme="dark"]) {
+    
+    /* Page structure colors */
+    --page-bg: #E6DFF0;
+    --card-bg: #FAF9FB; 
+    --card-border: #9CA3AF;
+    --card-shadow: rgba(17,24,39,0.08);
+    
+    /* Navigation colors */
+    --nav-bg-start: #AECDF5;
+    --nav-bg-end: #8DBBEB;
+    --nav-text: #111827;
+    --nav-text-hover: #374151;
+    --nav-border:#D6CCE6;
+    
+    /* Footer colors */
+        --footer-bg: linear-gradient(180deg, #E6DFF0 0%, #F6BFD2 100%);
+        --footer-text: #111827;
+        --footer-border: #D6CCE6;
+        --footer-bg-solid: #E6DFF0;
+        --footer-link: #7B2D8E;
+        --footer-link-hover: #5A3A76;
+        --footer-link-visited: #9B59B6;
+        
+    /* Text and link colors */
+    --text-primary: #111827;
+    --text-secondary: #4a3757;
+    --link-color: #2563EB;
+    --link-hover: #1D4ED8;
+    --heading-h1h2: #2D1B45; 
+    --heading-h3: #374151;   
+
+    /* Interactive element colors */
+    --accent-primary: #7b2d8e;
+    --accent-secondary: #9b59b6;
+    }
+
+
+/* ===== DARK MODE PALETTES ===== */
+
+[data-theme="dark"] {
+  /* Page structure colors */
+  --page-bg: #1f2937;
+  --card-bg: #374151;
+  --card-border: rgba(255, 255, 255, 0.15);
+  --card-shadow: 0 6px 18px rgba(0,0,0,.30);
+  
+  /* Navigation colors (using existing navbar styling) */
+  --nav-bg-start: #2c3e50;
+  --nav-bg-end: #34495e;
+  --nav-text: #ecf0f1;
+  --nav-text-hover: #f39c12;
+  --nav-border: rgba(255,255,255,0.06);
+  
+  /* Footer colors (using existing footer styling) */
+  --footer-bg: rgba(36, 52, 67, 0.98);
+  --footer-text: #eef2f5;
+  --footer-border: rgba(255,255,255,0.04);
+  
+  /* Text and link colors */
+  --text-primary: #f9fafb;
+  --text-secondary: #d1d5db;
+  --link-color: #5dade2;
+  --link-hover: #f4d03f;
+  
+  /* Interactive element colors */
+  --accent-primary: #5dade2;
+  --accent-secondary: #3498db;
+  --accent-gold: #f4d03f;
+  
+  --warm-primary: #5dade2;
+  --warm-secondary: #3498db;
+  --warm-accent: #f4d03f;
+  --warm-bg: #1f2937;
+  --warm-card: #374151;
+  --pub-primary: #6fb8ff;
+  --pub-pdf: #00C46A;
+  --pub-success: var(--pub-pdf);
+  --pub-warning: #ffd86b;
+  --pub-danger: #ff8585;
+  --pub-bib-bg-dark: #2E2E2E;
+  --pub-bib-text-dark: #ffffff;
+  --pub-bib-border-dark: rgba(255,255,255,0.06);
+  --paper-title: #f5e8d6;
+  --paper-accent: #ffd8a8;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,.25);
+  --shadow-md: 0 6px 18px rgba(0,0,0,.30);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,.35);
+}

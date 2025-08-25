@@ -1,0 +1,42 @@
+ - key: invited_boulder
+   title: "Adaptive and Trustworthy Autonomy of Cyber-Physical Systems"
+   publisher: "College of Engineering and Applied Science, University of Colorado Boulder, USA"
+   slides: "boulder_talk/index.html"
+   venueurl: "https://www.colorado.edu/engineering/"
+   keywords: "invited"
+
+ - key: invited_mpi
+   title: "Revisiting Parameter Synthesis for One-Counter Automata"
+   publisher: "OFCOURSE talk series - Max Planck Institute for Software Systems, Germany"
+   video: "mpi_talk.mp4"
+   slides: "mpi_slides.pdf"
+   venueurl: "https://ofcourse.mpi-sws.org/"
+   keywords: "invited"
+
+ - key: regular_highlights
+   title: "Learning Fragments in Linear Temporal Logic"
+   publisher: "HIGHLIGHTS 2022"
+   video: "highlights_talk.mp4"
+   slides: "highlights_slides.pdf"
+   venueurl: "https://highlights-conference.org/2022/"
+   keywords: "regular"
+
+ - key: invited_UA
+   title: "Software Verification via Logic"
+   publisher: "TCS Seminar at the University of Antwerp, Belgium (for Bachelors and Masters students)"
+   slides: "UA_presentation.pdf"
+   venueurl: "https://gaperez64.github.io/nofreelunch/"
+   keywords: "invited"
+
+ - key: CSS_talk
+   title: "Reachability Games with Relaxed Energy Constraints"
+   publisher: "Max Planck Institute for Software Systems, Germany"
+   slides: "CSS_talk/index.html"
+   keywords: "regular"
+
+ - key: invited_ulb
+   title: "Weighted Automata (with Ambiguity and Extensions)"
+   publisher: "Formal Methods and Verification Seminar - Université libre de Bruxelles"
+   slides: "wa.pdf"
+   venueurl: "https://verif.ulb.ac.be/seminars/"
+   keywords: "invited"

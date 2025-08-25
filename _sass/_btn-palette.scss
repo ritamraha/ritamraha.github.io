@@ -1,0 +1,149 @@
+/* Ensure buttons align with publication content, not list numbering */
+.text-justify,
+.paper-entry {
+  margin: 0 !important;
+  padding: 0 !important;
+  text-indent: 0 !important;
+  text-align: left !important;
+}
+
+.jumbotron .bibliography .btn,
+.jumbotron .btn,
+.btn-emerald,
+.btn-blue,
+.btn-amber,
+.btn-indigo,
+.btn-rose,
+.btn-cyan {
+  background-color: #DBEAFE !important; /* Tailwind blue-100 */
+  border: 1px solid #3B82F6 !important; /* Tailwind blue-500 */
+  color: #3B82F6 !important; /* Tailwind blue-500 */
+  
+  /* Size & Shape - compact 8px height for minimal vertical space */
+  height: 8px !important;
+  min-width: 60px !important;
+  width: auto !important;
+  padding: 1px 10px !important;
+  border-radius: 4px !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  text-transform: capitalize !important;
+  line-height: 1 !important;
+  box-shadow: none !important;
+  
+  /* Layout & Spacing */
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-right: 6px !important;
+  margin-bottom: 15px !important;
+  margin-top: 15px !important;
+  margin-left: 0 !important;
+  vertical-align: top !important;
+  
+  /* Smooth transitions */
+  transition: all 0.15s ease !important;
+}
+
+.jumbotron .bibliography .btn:hover,
+.jumbotron .btn:hover,
+.btn-emerald:hover,
+.btn-blue:hover,
+.btn-amber:hover,
+.btn-indigo:hover,
+.btn-rose:hover,
+.btn-cyan:hover {
+  background-color: #3B82F6 !important;
+  border-color: #3B82F6 !important;
+  color: #ffffff !important;
+  box-shadow: 0 3px 6px rgba(59, 130, 246, 0.2) !important;
+}
+
+.jumbotron .bibliography .btn:active,
+.jumbotron .btn:active,
+.btn-emerald:active,
+.btn-blue:active,
+.btn-amber:active,
+.btn-indigo:active,
+.btn-rose:active,
+.btn-cyan:active {
+  background-color: #1D4ED8 !important; 
+  border-color: #1D4ED8 !important;
+  color: #ffffff !important; 
+  box-shadow: 0 1px 3px rgba(29, 78, 216, 0.2) !important; 
+}
+
+/* Focus state */
+.jumbotron .bibliography .btn:focus,
+.jumbotron .btn:focus,
+.btn-emerald:focus,
+.btn-blue:focus,
+.btn-amber:focus,
+.btn-indigo:focus,
+.btn-rose:focus,
+.btn-cyan:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4) !important; 
+}
+
+/* Dark theme adjustments*/
+[data-theme="dark"] .jumbotron .bibliography .btn,
+[data-theme="dark"] .jumbotron .btn,
+[data-theme="dark"] .btn-emerald,
+[data-theme="dark"] .btn-blue,
+[data-theme="dark"] .btn-amber,
+[data-theme="dark"] .btn-indigo,
+[data-theme="dark"] .btn-rose,
+[data-theme="dark"] .btn-cyan {
+  background-color: rgba(245, 158, 11, 0.08) !important; 
+  border: 1px solid #F59E0B !important;
+  color: #F59E0B !important;
+}
+
+[data-theme="dark"] .jumbotron .bibliography .btn:hover,
+[data-theme="dark"] .jumbotron .btn:hover,
+[data-theme="dark"] .btn-emerald:hover,
+[data-theme="dark"] .btn-blue:hover,
+[data-theme="dark"] .btn-amber:hover,
+[data-theme="dark"] .btn-indigo:hover,
+[data-theme="dark"] .btn-rose:hover,
+[data-theme="dark"] .btn-cyan:hover {
+  background-color: #F59E0B !important;
+  border-color: #F59E0B !important;
+  color: #ffffff !important;
+  box-shadow: 0 3px 6px rgba(245, 158, 11, 0.25), 0 8px 20px rgba(245, 158, 11, 0.08) !important;
+}
+
+/* Dark theme active and focus states */
+[data-theme="dark"] .jumbotron .bibliography .btn:active,
+[data-theme="dark"] .jumbotron .btn:active,
+[data-theme="dark"] .btn-emerald:active,
+[data-theme="dark"] .btn-blue:active,
+[data-theme="dark"] .btn-amber:active,
+[data-theme="dark"] .btn-indigo:active,
+[data-theme="dark"] .btn-rose:active,
+[data-theme="dark"] .btn-cyan:active {
+  background-color: #D97706 !important;
+  border-color: #D97706 !important;
+  color: #ffffff !important;
+  box-shadow: 0 1px 3px rgba(217, 119, 6, 0.2) !important;
+}
+
+[data-theme="dark"] .jumbotron .bibliography .btn:focus,
+[data-theme="dark"] .jumbotron .btn:focus,
+[data-theme="dark"] .btn-emerald:focus,
+[data-theme="dark"] .btn-blue:focus,
+[data-theme="dark"] .btn-amber:focus,
+[data-theme="dark"] .btn-indigo:focus,
+[data-theme="dark"] .btn-rose:focus,
+[data-theme="dark"] .btn-cyan:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.4) !important;
+}
+
+body .jumbotron .bibliography .btn,
+body .jumbotron .btn {
+  background-color: #DBEAFE !important;
+  border: 1px solid #3B82F6 !important;
+  color: #3B82F6 !important;
+}
