@@ -14,19 +14,9 @@
 // Theme initializer
 (function(){
   try {
-    var saved = localStorage.getItem('theme'); // 'dark'|'light' or null
-    var theme = saved || null;
-
-    // Prefer OS/browser theme when available
-    if (!theme && window.matchMedia) {
-      if (window.matchMedia('(prefers-color-scheme: dark)').matches) theme = 'dark';
-    }
-
-    // Fallback: local time
-    if (!theme) {
-      var hour = (new Date()).getHours();
-      theme = (hour >= 19 || hour < 6) ? 'dark' : 'light';
-    }
+  var saved = localStorage.getItem('theme'); // 'dark'|'light' or null
+  // Default to dark when there's no saved preference
+  var theme = saved || 'dark';
 
     // Apply theme
     if (theme === 'dark') document.body.setAttribute('data-theme', 'dark');
@@ -147,12 +137,18 @@
   document.addEventListener('DOMContentLoaded', () => {
     const saved = localStorage.getItem('theme');
     const icon = document.getElementById('theme-icon');
+    // Only override the initial theme if the user has an explicit saved preference
     if (saved === 'dark') {
       document.body.setAttribute('data-theme', 'dark');
-      icon.textContent = '☀️';
-    } else {
+      if (icon) icon.textContent = '☀️';
+    } else if (saved === 'light') {
       document.body.removeAttribute('data-theme');
-      icon.textContent = '🌙';
+      if (icon) icon.textContent = '🌙';
+    } else {
+      // no saved preference: keep whatever the inline initializer applied (now defaults to dark)
+      if (icon) {
+        icon.textContent = (document.body.getAttribute('data-theme') === 'dark') ? '☀️' : '🌙';
+      }
     }
 
     const container = document.querySelector('main');
