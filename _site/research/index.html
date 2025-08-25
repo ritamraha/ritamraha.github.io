@@ -4,38 +4,77 @@
   <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
 
   <title>Research - Ritam Raha</title>
   <meta name="description" content="Ritam Raha's Homepage">
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="/research/">
-  <link rel="shortcut icon" type ="image/x-icon" href="/images/favicon.ico">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
-
+  <link rel="canonical" href="http://localhost:4000/research/">
+  <link rel="shortcut icon" type ="image/x-icon" href="http://localhost:4000/images/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="preconnect" href="https://player.vimeo.com">
   <link rel="preconnect" href="https://i.vimeocdn.com">
   <link rel="preconnect" href="https://f.vimeocdn.com">
 
 
 
-
+<!-- Theme color for mobile browsers -->
+<meta name="theme-color" content="#fefbf3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1f2937" media="(prefers-color-scheme: dark)">
 </head>
 
 
-  <body>
+  <body class="other-page">
+  <!-- Google Tag Manager (noscript): moved here per Google’s guidance -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id="
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
 
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id="
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+<script>
+// Theme initializer
+(function(){
+  try {
+    var saved = localStorage.getItem('theme'); // 'dark'|'light' or null
+    var theme = saved || null;
 
-<nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
+    // Prefer OS/browser theme when available
+    if (!theme && window.matchMedia) {
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) theme = 'dark';
+    }
+
+    // Fallback: local time
+    if (!theme) {
+      var hour = (new Date()).getHours();
+      theme = (hour >= 19 || hour < 6) ? 'dark' : 'light';
+    }
+
+    // Apply theme
+    if (theme === 'dark') document.body.setAttribute('data-theme', 'dark');
+    else document.body.removeAttribute('data-theme');
+
+    // Update toggle icon
+    var icon = document.getElementById('theme-icon');
+    if (icon) icon.textContent = (theme === 'dark') ? '☀️' : '🌙';
+  } catch (e) {
+    /* fail silently */
+  }
+})();
+</script>
+
+  <!-- Theme Toggle Button -->
+  <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">
+    <span id="theme-icon">🌙</span>
+  </button>
+
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">
-      <img src="/images/favicon.ico" width="30" height="30" style="margin-right:5px" class="d-inline-block align-top" alt="">
-      <span class="site-title" style="margin-right: px;">Ritam Raha</span>
+    <a class="navbar-brand" href="http://localhost:4000/">
+      <img src="http://localhost:4000/images/favicon.ico" width="30" height="30" style="margin-right:5px" class="d-inline-block align-top" alt="">
+      <span class="site-title">Ritam Raha</span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -44,38 +83,52 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="collapse navbar-collapse" id="navbarColor02">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link" href="http://localhost:4000/" >Home</a>
         </li> 
         
           <li class="nav-item">
-            <a class="nav-link" href="/about">About</a>
-          </li> 
+            <a class="nav-link" href="http://localhost:4000/about" >
+              About
+            </a>
+          </li>
         
           <li class="nav-item">
-            <a class="nav-link" href="/publications">Publications</a>
-          </li> 
+            <a class="nav-link" href="http://localhost:4000/publications" >
+              Publications
+            </a>
+          </li>
         
           <li class="nav-item">
-            <a class="nav-link" href="/talks">Talks</a>
-          </li> 
+            <a class="nav-link" href="http://localhost:4000/talks" >
+              Talks
+            </a>
+          </li>
         
           <li class="nav-item">
-            <a class="nav-link" href="/service">Service</a>
-          </li> 
+            <a class="nav-link" href="http://localhost:4000/service" >
+              Service
+            </a>
+          </li>
         
           <li class="nav-item">
-            <a class="nav-link" href="/miscellaneous">Miscellaneous</a>
-          </li> 
+            <a class="nav-link" href="http://localhost:4000/miscellaneous" >
+              Miscellaneous
+            </a>
+          </li>
         
       </ul>
     </div>
   </div>
 </nav>
 
+  </header>
 
+  <main>
     <div class="container-fluid">
       <div class="row">
-        <h2 id="research">Research</h2>
+        
+          <div id="maincol" class="col-lg-9 col-md-8 col-sm-12">
+            <h2 id="research">Research</h2>
 
 <p>My research interest includes Verification of AI, Automata Theory, and Games. I am currently working on two aspects of theoretical foundations of formal verification techniques: i. Learning from data ii. Formal Verification of systems. More details about each of the aspects have been discussed below.</p>
 
@@ -122,45 +175,333 @@ One of the main approaches of verification, that I worked on, is the parameter-s
   </div>
 </div>
 
+          </div>
+          <div id="rightbanner" class="col-lg-3 col-md-4 col-sm-12">
+            
+
+<aside class="side-card">
+  <a class="side-photo-link" href="http://localhost:4000/about">
+    <img class="side-photo" src="http://localhost:4000/images/selfpic/self_cropped.jpg" alt="Ritam Raha" loading="lazy" />
+  </a>
+
+  <div class="side-meta">
+    <h4 class="side-name">Ritam Raha</h4>
+    <div class="side-title">Postdoctoral Researcher</div>
+    <div class="side-aff">MPI-SWS, Germany</div>
+  </div>
+
+  <div style="margin-bottom:5px">
+   <a href="mailto:rraha@mpi-sws.org" target="_blank"><i class="fa fa-envelope-square fa-2x"></i></a> 
+    <a href="http://localhost:4000/cv/cv.pdf" target="_blank"><i class="ai ai-cv-square ai-2x"></i></a> 
+    <a href="https://scholar.google.com/citations?user=9zJyPuQAAAAJ&hl=en" target="_blank"><i class="ai ai-google-scholar-square ai-2x"></i></a> 
+    <a href="https://dblp.uni-trier.de/pid/249/2185.html" target="_blank"><i class="ai ai-dblp-square ai-2x"></i></a> 
+   <a href="https://github.com/ritamraha" target="_blank"><i class="fa fa-github-square fa-2x"></i></a> 
+   <a href="https://www.linkedin.com/in/ritam-raha-157491118/" target="_blank"><i class="fa fa-linkedin-square fa-2x"></i></a> 
+  </div>
+</aside>
+          </div>
+        
       </div>
     </div>
 
-    <br/>
-<section id="footer">
-<div class="container-footer">
-  <div class="panel-footer">
-	  <div class="row">
-		<div class="col-sm-4">
-		    <h5>About</h5>	
-            <p>Ritam Raha<br/> Postdoctoral Researcher in Computer Science<br/> <a href="https://www.mpi-sws.org/" target="_blank">Max Planck Institute for Software Systems</a><br/>
-</p>
-		</div>
+    <!-- Subtle Scroll Hint -->
+    <div class="scroll-hint" id="scrollHint">
+      <div class="scroll-arrow"></div>
+      <span class="scroll-text" style="margin-left: 8px;">Scroll down</span>
+    </div>
+  </main>
 
-		<div class="col-sm-4">
-		    <h5>Contact</h5>	
-            <p><a href="mailto:ritam.raha18@gmail.com" target="_blank"><i class="fa fa-envelope fa-1x"></i> Contact Ritam via email</a> <br/> <a href="/aboutwebsite.html"><i class="fa fa-github fa-1x"></i> Use this site as a template!</a>
+  <section id="footer">
+<div class="container-fluid">
+  <div class="container-footer">
+    <div class="footer-content">
+      <div class="row footer-row-compact">
+      <div class="col-md-4 col-sm-12">
+        <div class="footer-section left-section">
+          <p class="addr-title">Ritam Raha</p>
+          <p class="footer-text compact-aff">Postdoc in Computer Science<br/> <a href="https://www.mpi-sws.org/" target="_blank">MPI-SWS, Germany</a>
 </p>
-		</div>
-
-		<div class="col-sm-4">
-		    <h5>Find me at</h5>	
-            <p>Max Planck Institute for Software Systems<br/> Room 318<br/> Paul-Ehrlich Strasse G 26<br/> 67663 Kaiserslautern, Germany
+          <p class="footer-text compact-contact" style="margin-top:6px;"><a href="mailto:rraha@mpi-sws.org" target="_blank"><i class="fa fa-envelope fa-1x"></i> Contact via email</a> <br/> <a href="/aboutwebsite.html"><i class="fa fa-github fa-1x"></i> Site template / source</a>
 </p>
-		</div>
-	  </div>
+        </div>
+      </div>
 
-      <center><p>&copy 2025 Ritam Raha </p></center>
-	</div>
+      <div class="col-md-4 col-sm-12">
+        <div class="footer-section middle-section">
+          <p class="addr-title">Mailing address</p>
+          <p class="footer-text">
+            
+              Ritam Raha<br>
+            
+              Max Planck Institute for Software Systems<br>
+            
+              Paul-Ehrlich Strasse G 26<br>
+            
+              67663 Kaiserslautern
+            
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-12">
+        <div class="footer-section right-section">
+          <p class="addr-title">Physical address</p>
+          <p class="footer-text">
+            
+              Room 318, Building G 26<br>
+            
+              Campus Kaiserslautern
+            
+          </p>
+
+          <p class="map-row">
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Max-Planck-Institut+f%C3%BCr+Softwaresysteme%2C+Kaiserslautern%2C+Germany" target="_blank" rel="noopener noreferrer" aria-label="Open location in Google Maps">
+            <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <span class="map-link-text">View on map</span>
+            </a>
+          </p>
+        </div>
+      </div>
+      </div>
+      <p class="footer-copyright">© 2025 Ritam Raha. All rights reserved.</p>
+    </div>
   </div>
 </div>
-
-<script src="/assets/javascript/bootstrap/jquery.min.js"></script>
-<!-- <script src="/assets/javascript/popper/dist/umd/popper.min.js"></script> -->
-<script src="/assets/javascript/bootstrap/bootstrap.bundle.min.js"></script>
-<!-- <script src="/assets/javascript/shb.js"></script> -->
+</section>
 
 
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var right = document.getElementById('rightbanner');
+    if (!right) return;
+    right.style.cursor = 'pointer';
+    right.addEventListener('click', function(e) {
+      var node = e.target;
+      while (node && node !== right) {
+        if (node.tagName && node.tagName.toLowerCase() === 'a') return;
+        node = node.parentNode;
+      }
+      window.location.href = 'http://localhost:4000/about';
+    });
+  });
+</script>
+
+<script>
+  // Theme toggle functionality
+  function toggleTheme() {
+    const body = document.body;
+    const themeIcon = document.getElementById('theme-icon');
+    if (body.getAttribute('data-theme') === 'dark') {
+      body.removeAttribute('data-theme');
+      themeIcon.textContent = '🌙';
+      localStorage.setItem('theme', 'light');
+    } else {
+      body.setAttribute('data-theme', 'dark');
+      themeIcon.textContent = '☀️';
+      localStorage.setItem('theme', 'dark');
+    }
+  }
+
+  // Debounce
+  function debounce(func, wait) {
+    let timeout;
+    return function(...args) {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func(...args), wait);
+    };
+  }
+
+  // Scroll hint handler
+  function handleScrollHint() {
+    const hint = document.getElementById('scrollHint');
+    const footer = document.getElementById('footer');
+    const main = document.querySelector('main');
+    if (!hint || !footer) return;
+
+    hint.style.position = 'fixed';
+    hint.style.left = '50%';
+    hint.style.transform = 'translateX(-50%)';
+    hint.style.zIndex = '1100';
+
+    let scrollEl;
+    if (main && main.scrollHeight > main.clientHeight + 10) {
+      scrollEl = main;
+    } else {
+      scrollEl = document.documentElement;
+    }
+
+    const isScrollable = scrollEl.scrollHeight > scrollEl.clientHeight + 40;
+    const scrollTop = scrollEl.scrollTop || document.documentElement.scrollTop || document.body.scrollTop;
+    const isAtTop = scrollTop < 50;
+
+    const shouldShow = isScrollable && isAtTop;
+    hint.style.opacity = shouldShow ? '0.85' : '0';
+  }
+
+  // DOMContentLoaded block
+  document.addEventListener('DOMContentLoaded', () => {
+    const saved = localStorage.getItem('theme');
+    const icon = document.getElementById('theme-icon');
+    if (saved === 'dark') {
+      document.body.setAttribute('data-theme', 'dark');
+      icon.textContent = '☀️';
+    } else {
+      document.body.removeAttribute('data-theme');
+      icon.textContent = '🌙';
+    }
+
+    const container = document.querySelector('main');
+    const onScroll = debounce(handleScrollHint, 16);
+    const onResize = debounce(() => {
+      handleScrollHint();
+      syncFooterBehavior();
+    }, 100);
+
+    setTimeout(() => { handleScrollHint(); syncFooterBehavior(); }, 120);
+
+    if (container) container.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onResize);
+    window.addEventListener('load', () => { handleScrollHint(); syncFooterBehavior(); });
+
+    const observer = new MutationObserver(debounce(() => {
+      handleScrollHint();
+      syncFooterBehavior();
+    }, 200));
+
+    if (container) observer.observe(container, { childList: true, subtree: true });
+    const footerEl = document.getElementById('footer');
+    if (footerEl) observer.observe(footerEl, { childList: true, subtree: true });
+  });
+</script>
+
+  <script>
+    function syncFooterBehavior() {
+      const body = document.body;
+      const footer = document.getElementById('footer');
+      const header = document.querySelector('header');
+      if (!footer || !body) return;
+
+      const footerH = footer.offsetHeight || 0;
+      const headerH = header ? header.offsetHeight : (parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height')) || 0);
+      const viewport = window.innerHeight || document.documentElement.clientHeight;
+
+      const main = document.querySelector('main');
+      const mainContentH = main ? main.scrollHeight : Math.max(document.body.scrollHeight - headerH - footerH, 0);
+
+      const totalHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+
+      let isShort = (mainContentH + headerH + footerH <= viewport + 2);
+
+      const mainIsScrollable = main ? (main.scrollHeight > main.clientHeight + 8) : false;
+      if (!isShort && totalHeight > viewport + 6 && !mainIsScrollable && (mainContentH <= (viewport - headerH - footerH + 8))) {
+        isShort = true;
+      }
+
+      if (isShort) {
+        if (!body.classList.contains('page-short')) body.classList.add('page-short');
+        footer.classList.add('page-short');
+      } else {
+        body.classList.remove('page-short');
+        footer.classList.remove('page-short');
+      }
+
+      document.documentElement.style.setProperty('--footer-height', footerH + 'px');
+      console.log('syncFooterBehavior', { viewport, headerH, footerH, mainContentH, totalHeight, mainIsScrollable, isShort });
+    }
+
+    function syncHeaderHeightVar() {
+      const header = document.querySelector('header');
+      const h = header ? Math.ceil(header.getBoundingClientRect().height) : 64;
+      document.documentElement.style.setProperty('--header-height', h + 'px');
+    }
+
+    try { syncFooterBehavior(); } catch(e) {}
+    window.addEventListener('resize', () => { syncHeaderHeightVar(); }, { passive: true });
+    window.addEventListener('load', () => { syncHeaderHeightVar(); }, { once: true });
+  </script>
+
+  <script>
+  (function () {
+    var nav = document.getElementById('navbarColor02');
+    if (!nav || !window.jQuery) return;
+    jQuery(nav).on('shown.bs.collapse hidden.bs.collapse', function () {
+      try {
+        syncHeaderHeightVar();
+        handleScrollHint();
+        syncFooterBehavior();
+      } catch (e) {}
+    });
+  })();
+  </script>
+
+  <!-- Centralized scripts -->
+  <script src="/assets/javascript/bootstrap/jquery.min.js"></script>
+  <script src="/assets/javascript/bootstrap/bootstrap.bundle.min.js"></script>
+  <script>
+    (function() {
+      var pinned = false;
+      var debounce = function(fn, wait){ var t; return function(){ clearTimeout(t); t = setTimeout(fn, wait||80); }; };
+
+      function getHeaderHeight() {
+        var header = document.querySelector('header');
+        var cssH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height')) || 0;
+        if (header && header.offsetHeight) return Math.max(cssH, header.offsetHeight);
+        return cssH || 64;
+      }
+
+      function pinSidebarIfNeeded() {
+        var breakpoint = 992;
+        var wb = window.innerWidth || document.documentElement.clientWidth;
+        var rb = document.getElementById('rightbanner');
+        if (!rb) return;
+    var card = rb; // rename: card -> rb (the column)
+        if (!card) return;
+
+        // Small screens: unpin and restore flow
+        if (wb < breakpoint) {
+          if (pinned) {
+            card.classList.remove('fixed-side-card');
+            card.style.left = '';
+            card.style.top = '';
+            card.style.width = '';
+            card.style.visibility = '';
+            card.removeAttribute('data-pinned');
+            pinned = false;
+          }
+          return;
+        }
+
+    rb.style.visibility = 'hidden';
+
+        var rect = rb.getBoundingClientRect();
+    var left = rect.left;
+    var width = rect.width;
+
+        // Use header height as the stable top anchor so the card doesn't jump when images load
+        var headerH = getHeaderHeight();
+        var top = Math.max(12, headerH + 8); 
+    rb.classList.add('fixed-rightbanner');
+    rb.style.left = left + 'px';
+    rb.style.top = top + 'px';
+    rb.style.width = width + 'px';
+    rb.setAttribute('data-pinned', 'true');
+    rb.style.visibility = 'visible';
+        pinned = true;
+      }
+
+      var debounced = debounce(pinSidebarIfNeeded, 120);
+      window.addEventListener('resize', debounced, { passive: true });
+      window.addEventListener('orientationchange', debounced);
+      window.addEventListener('load', function(){ setTimeout(pinSidebarIfNeeded, 50); });
+      setTimeout(pinSidebarIfNeeded, 260);
+
+      try {
+        var obs = new MutationObserver(debounce(pinSidebarIfNeeded, 140));
+        obs.observe(document.body, { childList: true, subtree: true });
+      } catch(e) {}
+    })();
+  </script>
 
   </body>
-
 </html>

@@ -1,31 +1,47 @@
-<br/>
 <section id="footer">
-<div class="container-footer">
-  <div class="panel-footer">
-	  <div class="row">
-		<div class="col-sm-4">
-		    <h5>About</h5>	
-            <p>{{ site.affiliation }}</p>
-		</div>
+<div class="container-fluid">
+  <div class="container-footer">
+    <div class="footer-content">
+      <div class="row footer-row-compact">
+      <div class="col-md-4 col-sm-12">
+        <div class="footer-section left-section">
+          <p class="addr-title">Ritam Raha</p>
+          <p class="footer-text compact-aff">{{ site.data.footer.affiliation_html | safe }}</p>
+          <p class="footer-text compact-contact" style="margin-top:6px;">{{ site.data.footer.contact_html | safe }}</p>
+        </div>
+      </div>
 
-		<div class="col-sm-4">
-		    <h5>Contact</h5>	
-            <p>{{ site.contact }}</p>
-		</div>
+      <div class="col-md-4 col-sm-12">
+        <div class="footer-section middle-section">
+          <p class="addr-title">Mailing address</p>
+          <p class="footer-text">
+            {% for line in site.data.footer.mailing.lines %}
+              {{ line }}{% unless forloop.last %}<br>{% endunless %}
+            {% endfor %}
+          </p>
+        </div>
+      </div>
 
-		<div class="col-sm-4">
-		    <h5>Find me at</h5>	
-            <p>{{ site.location }}</p>
-		</div>
-	  </div>
+      <div class="col-md-4 col-sm-12">
+        <div class="footer-section right-section">
+          <p class="addr-title">Physical address</p>
+          <p class="footer-text">
+            {% for line in site.data.footer.physical.lines %}
+              {{ line }}{% unless forloop.last %}<br>{% endunless %}
+            {% endfor %}
+          </p>
 
-      <center><p>&copy {{ "now" | date: "%Y" }} {{site.title | escape }} </p></center>
-	</div>
+          <p class="map-row">
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query={{ site.data.footer.maps_query | url_encode }}" target="_blank" rel="noopener noreferrer" aria-label="Open location in Google Maps">
+            <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <span class="map-link-text">View on map</span>
+            </a>
+          </p>
+        </div>
+      </div>
+      </div>
+      <p class="footer-copyright">© {{ "now" | date: "%Y" }} {{ site.data.footer.copyright_name }}. All rights reserved.</p>
+    </div>
   </div>
 </div>
-
-<script src="{{ "/assets/javascript/bootstrap/jquery.min.js" | relative_url }}"></script>
-<!-- <script src="{{ "/assets/javascript/popper/dist/umd/popper.min.js" | relative_url }}"></script> -->
-<script src="{{ "/assets/javascript/bootstrap/bootstrap.bundle.min.js" | relative_url }}"></script>
-<!-- <script src="{{ "/assets/javascript/shb.js" | relative_url }}"></script> -->
-
+</section>

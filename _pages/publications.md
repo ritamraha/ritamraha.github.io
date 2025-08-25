@@ -12,32 +12,26 @@ permalink: /publications/
     padding-top:10px;
     margin-top:10px;
     margin-bottom:30px;
+    width: calc(100% + 60px);
+    margin-left: -30px;
+    margin-right: -30px;
+    max-width: none;
 }
 </style>
 
-<!-- <div class="jumbotron">
-### Preprints
-{% bibliography --query @unpublished %}
-</div>
-
-<div class="jumbotron">
-### Under submission
-{% bibliography --query @insubmissions %}
-</div>
--->
 <div class="jumbotron">
 ### Preprints
 {% bibliography --query @unpublished %}
 </div>
 
 <div class="jumbotron">
-### Conference proceedings
+### Conference Papers
 {% bibliography --query @inproceedings %}
 </div>
 
 
 <div class="jumbotron">
-### Journal articles
+### Journal Articles
 {% bibliography --query @article %}
 </div>
 

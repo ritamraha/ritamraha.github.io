@@ -3,15 +3,20 @@ title: "About"
 layout: gridlay
 sitemap: false
 permalink: /about/
+no_sidebar: true
 ---
-
-## About 
-
 {% for member in site.data.pi %}
 <div class="jumbotron">
 <div class="row">
 <div class="col-sm-4">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/selfpic/{{ member.photo }}" width="100%" style="max-width:250px"/>
+  <img
+  class="about-photo"
+  src="{{ site.url }}{{ site.baseurl }}/images/selfpic/{{ member.photo }}"
+  width="100%"
+  style="max-width:250px"
+  loading="lazy"
+  alt="{{ member.name }} portrait"
+/>
 </div>
 <div class="col-sm-8 col-xs-12">
   <h3>{{ member.name }}</h3>
@@ -19,8 +24,9 @@ permalink: /about/
   {% if member.email %}<a href="mailto:{{ member.email }}" target="_blank"><i class="fa fa-envelope-square fa-3x"></i></a> {% endif %}
   {% if member.cv %} <a href="{{ site.url }}{{ site.baseurl }}/{{ member.cv }}" target="_blank"><i class="ai ai-cv-square ai-3x"></i></a> {% endif %}
   {% if member.scholar %} <a href="{{ member.scholar }}" target="_blank"><i class="ai ai-google-scholar-square ai-3x"></i></a> {% endif %}
+  {% if member.dblp %}    <a href="{{ member.dblp }}"    target="_blank" rel="noopener noreferrer"><i class="ai ai-dblp-square ai-3x"></i></a> {% endif %}
   {% if member.github %} <a href="{{ member.github }}" target="_blank"><i class="fa fa-github-square fa-3x"></i></a> {% endif %}
-  {% if member.researchgate %} <a href="{{ member.researchgate }}" target="_blank"><i class="ai ai-researchgate-square ai-3x"></i></a> {% endif %}
+  {% if member.linkedin %} <a href="{{ member.linkedin }}" target="_blank"><i class="fa fa-linkedin-square fa-3x"></i></a> {% endif %}
 
   <ul style="overflow: hidden">
   {% if member.number_educ == 1 %}
@@ -65,7 +71,7 @@ permalink: /about/
 
 {% if site.data.advisors %}
 <div class="jumbotron">
-### Advisors
+<h3>Advisor</h3>
 <ul>
 {% for advisor in site.data.advisors %}
  <li> <a href="{{advisor.url}}" target="_blank">{{advisor.name}}</a> ({{advisor.title}})</li>
@@ -77,7 +83,7 @@ permalink: /about/
 
 {% if site.data.grants %}
 <div class="jumbotron">
-### Grants
+<h3>Grants</h3>
 <ul>
 {% for grant in site.data.grants %}
  <li> {{ grant.name }} </li>
@@ -90,7 +96,7 @@ permalink: /about/
 
 {% if site.data.people %}
 <div class="jumbotron">
-### Students and mentoring
+<h3>Students and mentoring</h3>
 <ul>
 {% for student in site.data.people %}
  <li> {{ student.name }}, {{student.location}} ({{student.degree}}, {{student.year}}) </li>
@@ -102,7 +108,7 @@ permalink: /about/
 
 {% if site.data.collaborators %}
 <div class="jumbotron">
-### Collaborators
+<h3>Collaborators</h3>
 <ul>
 {% for collab in site.data.collaborators %}
  <li> <a href="{{collab.url}}" target="_blank">{{collab.name}}</a> ({{collab.title}})</li>
@@ -110,12 +116,3 @@ permalink: /about/
 </ul>
 </div>
 {% endif %}
-
-
-<!-- <div class="jumbotron">
-  <h4>Sponsors</h4>
-  <div style='display:block; text-align:center; margin-left:auto; margin-right:auto;'>
- {% for funder in site.data.funders %}<a href="{{ funder.url }}" target="_blank"><img src='{{ site.url }}{{ site.baseurl }}/images/logopic/{{ funder.image }}' style='max-height: 80px; max-width: 200px; margin: 1%'/></a>{% endfor %}
-  </div>
-</div>
- -->

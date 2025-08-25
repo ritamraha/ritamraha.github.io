@@ -1,36 +1,164 @@
 ---
 ---
-
-
-<style>
-.btn{
-    margin-bottom:5px;
-    padding-top:0px;
-    padding-bottom:0px;
-    padding-left:15px;
-    padding-right:15px;
-    height:20px:
-}
-pre{
-    white-space: pre-wrap;  
-    white-space: -moz-pre-wrap; 
-    white-space: -pre-wrap; 
-    white-space: -o-pre-wrap; 
-    word-wrap: break-word; 
-    width:100%; overflow-x:auto;
-}
-</style>
-
-
 <div class="text-justify">
-  {% if entry.title %}
-    <strong>{{ entry.title }}</strong><br/>
-    {% assign reference_without_title = reference | replace: entry.title, "" %}
-    {% assign reference_without_title = reference_without_title | replace: ".\n", "\n" %}
-    {{ reference_without_title | remove_first: '.' }}
-  {% else %}
-    {{ reference }}
-  {% endif %}
+    <div class="paper-entry">
+    {%- comment -%} detect talk entries early so title computation and venue rendering can rely on it {%- endcomment -%}
+    {%- assign is_talk = false -%}
+    {%- assign talk_venue_handled = false -%}
+    {%- comment -%} If the entry has keywords like 'invited'/'regular'/'talk', treat it as a talk. This covers user-edited talk entries. {%- endcomment -%}
+    {%- if entry.keywords -%}
+      {%- assign lowkw = entry.keywords | downcase -%}
+      {%- if lowkw contains 'invited' or lowkw contains 'talk' or lowkw contains 'regular' -%}
+        {%- assign is_talk = true -%}
+      {%- endif -%}
+    {%- endif -%}
+    {%- if entry.type == 'incollection' and entry.publisher -%}
+      {%- assign lowpub = entry.publisher | downcase -%}
+      {%- if lowpub contains 'talk' or lowpub contains 'invited' or lowpub contains 'presentation' -%}
+        {%- assign is_talk = true -%}
+      {%- endif -%}
+    {%- endif -%}
+
+    {%- comment -%} prefer explicit venue link fields if present (compute early for talk rendering) {%- endcomment -%}
+    {%- assign venue_link = false -%}
+    {%- if entry.venueurl -%}
+      {%- assign venue_link = entry.venueurl -%}
+    {%- elsif entry.venue_url -%}
+      {%- assign venue_link = entry.venue_url -%}
+    {%- elsif entry.venuelink -%}
+      {%- assign venue_link = entry.venuelink -%}
+    {%- endif -%}
+
+    {%- comment -%} compute a title to render; always prefer `entry.title` when present
+         (for talks we will render the publisher as the venue on the next line) {%- endcomment -%}
+    {%- assign title_for_render = nil -%}
+    {%- if entry.title -%}
+      {%- assign title_for_render = entry.title -%}
+    {%- elsif is_talk and entry.publisher -%}
+      {%- comment -%} fallback: try to split publisher on ' at ' only when no explicit title exists {%- endcomment -%}
+      {%- assign pubparts = entry.publisher | split: ' at ' -%}
+      {%- if pubparts.size > 1 -%}
+        {%- assign title_for_render = pubparts[0] | strip -%}
+        {%- assign venue_from_pub = pubparts | last | strip -%}
+      {%- endif -%}
+    {%- endif -%}
+
+    {% if title_for_render %}
+      <div class="paper-title">
+        {% if entry.url %}
+          <a href="{{ entry.url }}" target="_blank" rel="noopener noreferrer">{{ title_for_render }}</a>
+        {% else %}
+          {{ title_for_render }}
+        {% endif %}
+      </div>
+      {%- if is_talk and entry.publisher -%}
+        {%- comment -%} render the talk venue explicitly as 'at {publisher}' and prefer venue_link when available {%- endcomment -%}
+        <div class="paper-venue">
+          {%- if venue_link -%}
+            <a href="{{ venue_link }}" target="_blank" rel="noopener noreferrer">at {{ entry.publisher }}</a>
+          {%- else -%}
+            at {{ entry.publisher }}
+          {%- endif -%}
+        </div>
+        {%- assign talk_venue_handled = true -%}
+      {%- endif -%}
+    {% endif %}
+
+    {%- comment -%} detect thesis entries (master or phd) {%- endcomment -%}
+    {%- assign is_thesis = false -%}
+    {%- if entry.type contains 'thesis' or entry.type == 'phdthesis' or entry.type == 'mastersthesis' or entry.type == 'masterthesis' -%}
+      {%- assign is_thesis = true -%}
+    {%- endif -%}
+  {%- comment -%} thesis detection complete; talk detection handled earlier to avoid resetting talk_venue_handled {%- endcomment -%}
+
+    <div class="paper-authors">
+      {% if entry.author %}
+        {%- assign authors_list = entry.author | split: ' and ' -%}
+  {%- assign total = authors_list | size -%}
+  {%- assign last_index = total | minus: 1 -%}
+  {%- for a in authors_list -%}
+          {%- comment -%} Normalize "Last, First" to "First Last" {%- endcomment -%}
+          {%- if a contains ',' -%}
+            {%- assign parts = a | split: ', ' -%}
+            {%- assign author_name = parts[1] | append: ' ' | append: parts[0] -%}
+          {%- else -%}
+            {%- assign author_name = a -%}
+          {%- endif -%}
+
+          {{ author_name }}
+
+          {%- if total == 2 and forloop.last == false -%}
+            &nbsp;and&nbsp;
+          {%- elsif total > 2 and forloop.last == false -%}
+            ,&nbsp;
+          {%- endif -%}
+        {%- endfor -%}
+      {% else %}
+        {%- comment -%} If this is a talk and there is no explicit author, don't print the fallback (avoids duplication). {%- endcomment -%}
+        {%- if is_talk and (entry.author == nil) -%}
+          {%- comment -%} intentionally no authors for talks without explicit author {%- endcomment -%}
+        {%- elsif entry.publisher and (entry.title == nil) and (entry.author == nil) -%}
+          {%- comment -%} intentionally render no authors; publisher will appear in venue block {%- endcomment -%}
+        {%- else -%}
+          {%- assign reference_without_title = reference | replace: entry.title, "" -%}
+          {{ reference_without_title | remove_first: '.' | strip }}
+        {%- endif -%}
+      {% endif %}
+    {%- if is_thesis and entry.year -%}
+      , <span class="paper-year">{{ entry.year }}</span>
+    {%- endif -%}
+    </div>
+
+  {%- comment -%} (No-op) Title fallback for talks is handled above; avoid duplicate venue rendering here. {%- endcomment -%}
+
+    {%- comment -%} For tool entries (software/package/github or explicit software type) do not show venue/year {%- endcomment -%}
+    {%- unless entry.package or entry.github or entry.type == 'software' or is_thesis or talk_venue_handled -%}
+    <div class="paper-venue">
+      {%- comment -%} determine venue text {%- endcomment -%}
+      {%- if entry.journal -%}
+        {%- assign venue_text = entry.journal -%}
+      {%- elsif entry.booktitle -%}
+        {%- assign venue_text = entry.booktitle -%}
+      {%- elsif entry.publisher -%}
+        {%- assign venue_text = entry.publisher -%}
+      {%- elsif entry.organization -%}
+        {%- assign venue_text = entry.organization -%}
+      {%- else -%}
+        {%- assign ref_parts = (reference | remove_first: entry.title) | split: '.' -%}
+        {%- assign venue_text = ref_parts | last | strip -%}
+      {%- endif -%}
+
+      {%- comment -%} prefer explicit venue link fields if present {%- endcomment -%}
+      {%- assign venue_link = false -%}
+      {%- if entry.venueurl -%}
+        {%- assign venue_link = entry.venueurl -%}
+      {%- elsif entry.venue_url -%}
+        {%- assign venue_link = entry.venue_url -%}
+      {%- elsif entry.venuelink -%}
+        {%- assign venue_link = entry.venuelink -%}
+      {%- endif -%}
+
+      {%- comment -%} For talks, prefix with 'at ' and make clickable when venue link exists {%- endcomment -%}
+      {%- if is_talk -%}
+        {%- if venue_link -%}
+          <a href="{{ venue_link }}" target="_blank" rel="noopener noreferrer">at {{ venue_text }}</a>
+        {%- else -%}
+          at {{ venue_text }}
+        {%- endif -%}
+      {%- else -%}
+        {%- if venue_link -%}
+          <a href="{{ venue_link }}" target="_blank" rel="noopener noreferrer">{{ venue_text }}</a>
+        {%- else -%}
+          {{ venue_text }}
+        {%- endif -%}
+      {%- endif -%}
+
+      {%- if entry.year -%}
+         <span class="paper-year">{{ entry.year }}</span>
+      {%- endif -%}
+    </div>
+    {%- endunless -%}
+  </div>
 </div>
 
 
@@ -46,7 +174,7 @@ pre{
 
 
 {% if bibtest %}
-<a href="{{ site.url }}{{ site.baseurl }}/papers/{{ entry.file }}" target="_blank"><button class="btn btn-success btm-sm">PDF</button></a>
+<a href="{{ site.url }}{{ site.baseurl }}/papers/{{ entry.file }}" target="_blank"><button class="btn btn-emerald btm-sm">PDF</button></a>
 {% endif %}
 
 {% assign bibvideo = false %}
@@ -61,7 +189,7 @@ pre{
 
 
 {% if bibvideo %}
-<a href="{{ site.url }}{{ site.baseurl }}/talks/{{ entry.video }}" target="_blank"><button class="btn btn-success btm-sm">Video</button></a>
+<a href="{{ site.url }}{{ site.baseurl }}/talks/{{ entry.video }}" target="_blank"><button class="btn btn-emerald btm-sm">Video</button></a>
 {% endif %}
 
 {% assign bibslides = false %}
@@ -76,7 +204,7 @@ pre{
 
 
 {% if bibslides %}
-<a href="{{ site.url }}{{ site.baseurl }}/slides/{{ entry.slides }}" target="_blank"><button class="btn btn-primary btm-sm">Slides</button></a>
+<a href="{{ site.url }}{{ site.baseurl }}/slides/{{ entry.slides }}" target="_blank"><button class="btn btn-amber btm-sm">Slides</button></a>
 {% endif %}
 
 
@@ -86,37 +214,42 @@ pre{
 {% endif %}
 
 {% if bibdefenceslides %}
-<a href="{{ entry.defenceslides }}" target="_blank"><button class="btn btn-primary btm-sm">Defence Slides</button></a>
+<a href="{{ entry.defenceslides }}" target="_blank"><button class="btn btn-amber btm-sm">Defence Slides</button></a>
 {% endif %}
 
 
 {% if entry.doi %}
 {% if entry.type == 'unpublished' %}
-<a href="{{ entry.doi | prepend: 'https://arxiv.org/abs/' }}" target="_blank"><button class="btn btn-primary btm-sm">ARXIV</button></a>
+<a href="{{ entry.doi | prepend: 'https://arxiv.org/abs/' }}" target="_blank"><button class="btn btn-blue btm-sm">ARXIV</button></a>
 {% else %}
-<a href="{{ entry.doi | prepend: 'http://doi.org/' }}" target="_blank"><button class="btn btn-primary btm-sm">DOI</button></a>
+<a href="{{ entry.doi | prepend: 'http://doi.org/' }}" target="_blank"><button class="btn btn-blue btm-sm">DOI</button></a>
 {% endif %}
 {% endif %}
 
 {% if entry.type == 'unpublished' or entry.type == 'article' or  entry.type == 'thesis' or entry.type == 'inproceedings' or entry.type == 'report' %}
-<button class="btn btn-danger btm-sm"  onclick="toggleBibtex{{entry.key}}()">BIB</button>
+<button class="btn btn-indigo btm-sm" data-action="toggle-bib" data-key="{{entry.key}}">BIB</button>
 {% endif %}
 
 {% if entry.abstract %}
-<button class="btn btn-warning btm-sm"  onclick="toggleAbstract{{entry.key}}()">ABSTRACT</button>
+<button class="btn btn-cyan btm-sm" data-action="toggle-abstract" data-key="{{entry.key}}">ABSTRACT</button>
 {% endif %}
 
 {% if entry.website %}
-<a href="{{ entry.website}}" target="_blank"><button class="btn btn-success btm-sm">website</button></a>
+<a href="{{ entry.website}}" target="_blank"><button class="btn btn-cyan btm-sm">website</button></a>
 {% endif %}
 
 {% if entry.package %}
-<a href="{{ entry.package}}" target="_blank"><button class="btn btn-primary btm-sm">package</button></a>
+<a href="{{ entry.package}}" target="_blank"><button class="btn btn-rose btm-sm">package</button></a>
 {% endif %}
 
 {% if entry.github %}
-<a href="{{ entry.github}}" target="_blank"><button class="btn btn-warning btm-sm">github</button></a>
+<a href="{{ entry.github}}" target="_blank"><button class="btn btn-rose btm-sm">github</button></a>
 {% endif %}
+
+{%- comment -%} For theses, add a 'link' button to the URL (PhD thesis) {%- endcomment -%}
+{%- if is_thesis and entry.url -%}
+  <a href="{{ entry.url }}" target="_blank"><button class="btn btn-blue btm-sm">link</button></a>
+{%- endif -%}
 
 {% if entry.abstract %}
 <div id="a{{entry.key}}" style="display: none; background-color:black; border-radius:5px; padding:10px; margin-bottom:20px;">
@@ -132,22 +265,21 @@ pre{
 <pre>{{entry.abstract}}</pre>
 </div>
 
-
 <script>
-function toggleBibtex{{entry.key}}(parameter) {
-    var x= document.getElementById('a{{entry.key}}');
-    if (x.style.display === 'none') {
-        x.style.display = 'block';
-    } else {
-        x.style.display = 'none';
-    }
-}
-function toggleAbstract{{entry.key}}(parameter) {
-    var x= document.getElementById('b{{entry.key}}');
-    if (x.style.display === 'none') {
-        x.style.display = 'block';
-    } else {
-        x.style.display = 'none';
-    }
-}
+document.addEventListener('click', function(e) {
+  var btn = e.target.closest && e.target.closest('[data-action]');
+  if (!btn) return;
+  var action = btn.getAttribute('data-action');
+  var key = btn.getAttribute('data-key');
+  if (!action || !key) return;
+  if (action === 'toggle-bib') {
+    var el = document.getElementById('a' + key);
+    if (!el) return;
+    el.style.display = (el.style.display === 'none' || el.style.display === '') ? 'block' : 'none';
+  } else if (action === 'toggle-abstract') {
+    var el = document.getElementById('b' + key);
+    if (!el) return;
+    el.style.display = (el.style.display === 'none' || el.style.display === '') ? 'block' : 'none';
+  }
+});
 </script>
