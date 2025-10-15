@@ -223,6 +223,93 @@ document.addEventListener('click', function(e) {
   }
 });
 </script>
+</li>
+<li><div class="text-justify">
+    <div class="paper-entry">
+      <div class="paper-title">
+        
+          <a href="https://arxiv.org/abs/2510.12662" target="_blank" rel="noopener noreferrer">Maximal Adaptation, Minimal Guidance: Permissive Reactive Robot Task Planning with Humans in the Loop</a>
+        
+      </div><div class="paper-authors">
+      Oz Gitelson,&nbsp;Satya Prakash Nayak,&nbsp;Ritam Raha,&nbsp;Anne-Kathrin Schmuck</div><div class="paper-venue">ArXiv<span class="paper-year">2025</span></div></div>
+</div>
+
+
+
+
+
+
+
+<a href="/papers/robot.pdf" target="_blank"><button class="btn btn-emerald btm-sm">PDF</button></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<button class="btn btn-indigo btm-sm" data-action="toggle-bib" data-key="robot">BIB</button>
+
+
+
+
+
+
+
+
+
+<div id="arobot" style="display: none; background-color:black; border-radius:5px; padding:10px; margin-bottom:20px;">
+<pre>@unpublished{robot,
+  author = {Gitelson, Oz and Nayak, Satya Prakash and Raha, Ritam and Schmuck, Anne{-}Kathrin},
+  title = {Maximal Adaptation, Minimal Guidance: Permissive Reactive Robot Task Planning with Humans in the Loop},
+  booktitle = {ArXiv},
+  year = {2025},
+  url = {https://arxiv.org/abs/2510.12662},
+  file = {robot.pdf}
+}
+</pre>
+</div>
+
+
+<div id="brobot" style="display: none; background-color:black; border-radius:5px; padding:10px; margin-bottom:20px;">
+<pre></pre>
+</div>
+
+<script>
+document.addEventListener('click', function(e) {
+  var btn = e.target.closest && e.target.closest('[data-action]');
+  if (!btn) return;
+  var action = btn.getAttribute('data-action');
+  var key = btn.getAttribute('data-key');
+  if (!action || !key) return;
+  if (action === 'toggle-bib') {
+    var el = document.getElementById('a' + key);
+    if (!el) return;
+    el.style.display = (el.style.display === 'none' || el.style.display === '') ? 'block' : 'none';
+  } else if (action === 'toggle-abstract') {
+    var el = document.getElementById('b' + key);
+    if (!el) return;
+    el.style.display = (el.style.display === 'none' || el.style.display === '') ? 'block' : 'none';
+  }
+});
+</script>
 </li></ol>
 </div>
 
@@ -1285,7 +1372,7 @@ document.addEventListener('click', function(e) {
       <div class="paper-title">
         
           <a href="https://doi.org/10.5281/zenodo.5890149" target="_blank" rel="noopener noreferrer">SCARLET: Scalable Anytime Algorithm for Learning 
-                   LTL</a>
+               LTL</a>
         
       </div><div class="paper-authors">
       Ritam Raha,&nbsp;Rajarshi Roy,&nbsp;Nathanaël Fijalkow,&nbsp;Daniel Neider</div></div>
@@ -1342,7 +1429,7 @@ document.addEventListener('click', function(e) {
 <pre>@software{SCARLET,
   author = {Raha, Ritam and Roy, Rajarshi and Fijalkow, Nathanaël and Neider, Daniel},
   title = {{SCARLET: Scalable Anytime Algorithm for Learning 
-                     LTL}},
+                 LTL}},
   month = jan,
   year = {2022},
   publisher = {Zenodo},
@@ -1384,7 +1471,7 @@ document.addEventListener('click', function(e) {
       <div class="paper-title">
         
           TEAL: Synthesizing Efficiently Monitorable MTL 
-                   
+            
         
       </div><div class="paper-authors">
       Ritam Raha,&nbsp;Rajarshi Roy,&nbsp;Nathanaël Fijalkow,&nbsp;Daniel Neider,&nbsp;Guillermo Perez</div></div>
@@ -1433,7 +1520,7 @@ document.addEventListener('click', function(e) {
 <pre>@software{TEAL,
   author = {Raha, Ritam and Roy, Rajarshi and Fijalkow, Nathanaël and Neider, Daniel and Perez, Guillermo},
   title = {{TEAL: Synthesizing Efficiently Monitorable MTL 
-                     }},
+              }},
   github = {https://github.com/ritamraha/Teal}
 }
 </pre>
@@ -1472,7 +1559,7 @@ document.addEventListener('click', function(e) {
       <div class="paper-title">
         
           <a href="https://hdl.handle.net/10067/1986580151162165141" target="_blank" rel="noopener noreferrer">Learning and Verifying Temporal Specifications for Cyber-physical
-                  Systems</a>
+                   Systems</a>
         
       </div><div class="paper-authors">
       Ritam Raha, <span class="paper-year">2023</span></div></div>
@@ -1523,7 +1610,7 @@ document.addEventListener('click', function(e) {
 <pre>@phdthesis{Phd,
   author = {Raha, Ritam},
   title = {Learning and Verifying Temporal Specifications for Cyber-physical
-                    Systems},
+                     Systems},
   school = {University of Antwerp, Belgium &amp; University of Bordeuax, France},
   year = {2023},
   url = {https://hdl.handle.net/10067/1986580151162165141},
