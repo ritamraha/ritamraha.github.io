@@ -223,15 +223,19 @@ document.addEventListener('click', function(e) {
   }
 });
 </script>
-</li>
-<li><div class="text-justify">
+</li></ol>
+</div>
+
+<div class="jumbotron">
+  <h3 id="conference-papers">Conference Papers</h3>
+  <ol class="bibliography" reversed="reversed"><li><div class="text-justify">
     <div class="paper-entry">
       <div class="paper-title">
         
           <a href="https://arxiv.org/abs/2512.17637" target="_blank" rel="noopener noreferrer">About Time: Model-free Reinforcement Learning with Timed Reward Machines</a>
         
       </div><div class="paper-authors">
-      Anirban Majumdar,&nbsp;Ritam Raha,&nbsp;Rajarshi Roy,&nbsp;David Parker,&nbsp;Marta Kwiatkowska</div><div class="paper-venue">ArXiv<span class="paper-year">2025</span></div></div>
+      Anirban Majumdar,&nbsp;Ritam Raha,&nbsp;Rajarshi Roy,&nbsp;David Parker,&nbsp;Marta Kwiatkowska</div><div class="paper-venue"><a href="https://2026.ijcai.org/" target="_blank" rel="noopener noreferrer">(to appear) IJCAI</a><span class="paper-year">2026</span></div></div>
 </div>
 
 
@@ -276,13 +280,14 @@ document.addEventListener('click', function(e) {
 
 
 <div id="aTRM" style="display: none; background-color:black; border-radius:5px; padding:10px; margin-bottom:20px;">
-<pre>@unpublished{TRM,
+<pre>@inproceedings{TRM,
   author = {Majumdar, Anirban and Raha, Ritam and Roy, Rajarshi and Parker, David and Kwiatkowska, Marta},
   title = {About Time: Model-free Reinforcement Learning with Timed Reward Machines},
-  booktitle = {ArXiv},
-  year = {2025},
+  booktitle = {(to appear) IJCAI},
+  year = {2026},
   url = {https://arxiv.org/abs/2512.17637},
-  file = {trm.pdf}
+  file = {trm.pdf},
+  venueurl = {https://2026.ijcai.org/}
 }
 </pre>
 </div>
@@ -310,12 +315,8 @@ document.addEventListener('click', function(e) {
   }
 });
 </script>
-</li></ol>
-</div>
-
-<div class="jumbotron">
-  <h3 id="conference-papers">Conference Papers</h3>
-  <ol class="bibliography" reversed="reversed"><li><div class="text-justify">
+</li>
+<li><div class="text-justify">
     <div class="paper-entry">
       <div class="paper-title">
         
@@ -693,103 +694,6 @@ document.addEventListener('click', function(e) {
     <div class="paper-entry">
       <div class="paper-title">
         
-          <a href="https://doi.org/10.4230/LIPIcs.MFCS.2023.30" target="_blank" rel="noopener noreferrer">Parikh One-Counter Automata</a>
-        
-      </div><div class="paper-authors">
-      Michaël Cadilhac,&nbsp;Arka Ghosh,&nbsp;Guillermo A. Pérez,&nbsp;Ritam Raha</div><div class="paper-venue"><a href="https://mfcs2023.labri.fr/" target="_blank" rel="noopener noreferrer">MFCS</a><span class="paper-year">2023</span></div></div>
-</div>
-
-
-
-
-
-
-
-<a href="/papers/ParOCA.pdf" target="_blank"><button class="btn btn-emerald btm-sm">PDF</button></a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<a href="http://doi.org/10.4230/LIPIcs.MFCS.2023.30" target="_blank"><button class="btn btn-blue btm-sm">DOI</button></a>
-
-
-
-
-<button class="btn btn-indigo btm-sm" data-action="toggle-bib" data-key="Cadilhac23">BIB</button>
-
-
-
-
-
-
-
-
-
-<div id="aCadilhac23" style="display: none; background-color:black; border-radius:5px; padding:10px; margin-bottom:20px;">
-<pre>@inproceedings{Cadilhac23,
-  author = {Cadilhac, Micha{\"{e}}l and Ghosh, Arka and P{\'{e}}rez, Guillermo A. and Raha, Ritam},
-  title = {Parikh One-Counter Automata},
-  booktitle = {{MFCS}},
-  series = {LIPIcs},
-  volume = {272},
-  pages = {30:1--30:15},
-  publisher = {Schloss Dagstuhl - Leibniz-Zentrum f{\"{u}}r Informatik},
-  year = {2023},
-  url = {https://doi.org/10.4230/LIPIcs.MFCS.2023.30},
-  venueurl = {https://mfcs2023.labri.fr/},
-  doi = {10.4230/LIPIcs.MFCS.2023.30},
-  file = {ParOCA.pdf}
-}
-</pre>
-</div>
-
-
-<div id="bCadilhac23" style="display: none; background-color:black; border-radius:5px; padding:10px; margin-bottom:20px;">
-<pre></pre>
-</div>
-
-<script>
-document.addEventListener('click', function(e) {
-  var btn = e.target.closest && e.target.closest('[data-action]');
-  if (!btn) return;
-  var action = btn.getAttribute('data-action');
-  var key = btn.getAttribute('data-key');
-  if (!action || !key) return;
-  if (action === 'toggle-bib') {
-    var el = document.getElementById('a' + key);
-    if (!el) return;
-    el.style.display = (el.style.display === 'none' || el.style.display === '') ? 'block' : 'none';
-  } else if (action === 'toggle-abstract') {
-    var el = document.getElementById('b' + key);
-    if (!el) return;
-    el.style.display = (el.style.display === 'none' || el.style.display === '') ? 'block' : 'none';
-  }
-});
-</script>
-</li>
-<li><div class="text-justify">
-    <div class="paper-entry">
-      <div class="paper-title">
-        
           <a href="https://doi.org/10.1007/978-3-031-45286-4_11" target="_blank" rel="noopener noreferrer">A Framework for the Competitive Analysis of Model Predictive Controllers</a>
         
       </div><div class="paper-authors">
@@ -861,6 +765,103 @@ document.addEventListener('click', function(e) {
 
 
 <div id="bBellis2023" style="display: none; background-color:black; border-radius:5px; padding:10px; margin-bottom:20px;">
+<pre></pre>
+</div>
+
+<script>
+document.addEventListener('click', function(e) {
+  var btn = e.target.closest && e.target.closest('[data-action]');
+  if (!btn) return;
+  var action = btn.getAttribute('data-action');
+  var key = btn.getAttribute('data-key');
+  if (!action || !key) return;
+  if (action === 'toggle-bib') {
+    var el = document.getElementById('a' + key);
+    if (!el) return;
+    el.style.display = (el.style.display === 'none' || el.style.display === '') ? 'block' : 'none';
+  } else if (action === 'toggle-abstract') {
+    var el = document.getElementById('b' + key);
+    if (!el) return;
+    el.style.display = (el.style.display === 'none' || el.style.display === '') ? 'block' : 'none';
+  }
+});
+</script>
+</li>
+<li><div class="text-justify">
+    <div class="paper-entry">
+      <div class="paper-title">
+        
+          <a href="https://doi.org/10.4230/LIPIcs.MFCS.2023.30" target="_blank" rel="noopener noreferrer">Parikh One-Counter Automata</a>
+        
+      </div><div class="paper-authors">
+      Michaël Cadilhac,&nbsp;Arka Ghosh,&nbsp;Guillermo A. Pérez,&nbsp;Ritam Raha</div><div class="paper-venue"><a href="https://mfcs2023.labri.fr/" target="_blank" rel="noopener noreferrer">MFCS</a><span class="paper-year">2023</span></div></div>
+</div>
+
+
+
+
+
+
+
+<a href="/papers/ParOCA.pdf" target="_blank"><button class="btn btn-emerald btm-sm">PDF</button></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="http://doi.org/10.4230/LIPIcs.MFCS.2023.30" target="_blank"><button class="btn btn-blue btm-sm">DOI</button></a>
+
+
+
+
+<button class="btn btn-indigo btm-sm" data-action="toggle-bib" data-key="Cadilhac23">BIB</button>
+
+
+
+
+
+
+
+
+
+<div id="aCadilhac23" style="display: none; background-color:black; border-radius:5px; padding:10px; margin-bottom:20px;">
+<pre>@inproceedings{Cadilhac23,
+  author = {Cadilhac, Micha{\"{e}}l and Ghosh, Arka and P{\'{e}}rez, Guillermo A. and Raha, Ritam},
+  title = {Parikh One-Counter Automata},
+  booktitle = {{MFCS}},
+  series = {LIPIcs},
+  volume = {272},
+  pages = {30:1--30:15},
+  publisher = {Schloss Dagstuhl - Leibniz-Zentrum f{\"{u}}r Informatik},
+  year = {2023},
+  url = {https://doi.org/10.4230/LIPIcs.MFCS.2023.30},
+  venueurl = {https://mfcs2023.labri.fr/},
+  doi = {10.4230/LIPIcs.MFCS.2023.30},
+  file = {ParOCA.pdf}
+}
+</pre>
+</div>
+
+
+<div id="bCadilhac23" style="display: none; background-color:black; border-radius:5px; padding:10px; margin-bottom:20px;">
 <pre></pre>
 </div>
 
@@ -1919,7 +1920,7 @@ document.addEventListener('click', function(e) {
         </div>
       </div>
       </div>
-      <p class="footer-copyright">© 2025 Ritam Raha. All rights reserved.</p>
+      <p class="footer-copyright">© 2026 Ritam Raha. All rights reserved.</p>
     </div>
   </div>
 </div>
